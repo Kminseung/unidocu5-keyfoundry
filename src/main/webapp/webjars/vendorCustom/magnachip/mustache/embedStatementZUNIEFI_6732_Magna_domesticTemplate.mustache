@@ -1,0 +1,237 @@
+{{! vendorCustom/magnachip/mustache/embedStatementZUNIEFI_6732_Magna_domesticTemplate }}
+<div class="unidocu-approval-contents">
+    <style>
+        .unidocu-approval-contents {
+            width: 100%;
+            margin: auto;
+            padding-bottom: 20px;
+            font-size: 12px;
+        }
+        .unidocu-approval-contents table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        .unidocu-approval-contents table td,
+        .unidocu-approval-contents table th {
+            font-size: 12px;
+            border: 1px solid #ccc;
+            word-break: break-all;
+            text-align: center;
+            height: 20px;
+            background-color: #ffffff;
+            padding: 3px;
+        }
+        .unidocu-approval-contents table th {
+            background-color: #eee;
+        }
+        .unidocu-approval-contents .statement-evidence-link {
+            width: 17px;
+            height: 16px;
+            display: inline-block;
+            vertical-align: bottom;
+            cursor: pointer;
+            margin-left: 5px;
+            background-image: url(data:image/gif;base64,R0lGODlhEQAQALMAANvb29PT0/z8/GppaePj4+jo6PX19eXl5erq6uvr63h4ePf39+Hh4bS0tP///wAAACH5BAAAAAAALAAAAAARABAAAARpUJjCqr2sGAma/+AHTE3gnGjqBA3VnEssy2dTvbKiz4tjM7iFIjfz3RzC2DAZMwIdCUU0QZVSna+pdXr9vRAIBTg8RmAdY51YBz4f3vDDQHc4Owj4PEFXy5RUgCwaHSGFDSMSFBgYGgIRADs=);
+        }
+        .unidocu-approval-contents .statement-reqno-link,
+        .unidocu-approval-contents .statement-eviseq-link
+        {
+            width: 17px;
+            height: 16px;
+            display: inline-block;
+            vertical-align: bottom;
+            cursor: pointer;
+            margin-left: 5px;
+            background-image: url(data:image/gif;base64,R0lGODlhEQAQALMAANvb29PT0/z8/GppaePj4+jo6PX19eXl5erq6uvr63h4ePf39+Hh4bS0tP///wAAACH5BAAAAAAALAAAAAARABAAAARpUJjCqr2sGAma/+AHTE3gnGjqBA3VnEssy2dTvbKiz4tjM7iFIjfz3RzC2DAZMwIdCUU0QZVSna+pdXr9vRAIBTg8RmAdY51YBz4f3vDDQHc4Owj4PEFXy5RUgCwaHSGFDSMSFBgYGgIRADs=);
+        }
+    </style>
+
+
+    <table style="margin-top: 10px; table-layout: fixed; word-wrap: break-word">
+        <tr>
+            <th style="width:10%; text-align: center;">{{{출장구분}}}</th>
+            <td style="text-align: left;" data-field-description="REQTXT">{{os_data.PURPOSE_TXT}}</td>
+            <td style="display:none" data-field-description="PURPOSE" id="PURPOSE">{{os_data.PURPOSE}}</td>
+            <td style="display:none" data-field-description="DOC_TYPE" id="DOC_TYPE">{{os_data.DOC_TYPE}}</td>
+            <th style="width:10%; text-align: center;">{{{출장목적}}}</th>
+            <td style="text-align: left;" data-field-description="PURPOSE_TXT">{{os_data.TITLE}}</td>
+        </tr>
+        <tr>
+            <th style="width:10%; text-align: center;">{{{출장내용}}}</th>
+            <td colspan="3" style="text-align: left;"
+                data-field-description="PERNR_TXT POS_KEY_TXT"><label>
+                <textarea style="width: 100%; height: 80px;" readonly="readonly">{{os_text.TEXT4}}</textarea>
+            </label></td>
+
+        </tr>
+    </table>
+    <div style="margin-top: 35px;"></div>
+
+    <h3>■ 출장자 / 합계금액</h3>
+    <div style="font-weight: bold;text-align: right;margin-top: 10px; float: right;" class="eviseq-url">
+        {{{증빙조회}}} <span class="statement-eviseq-link" data-evi_seq="{{os_data.EVI_SEQ}}"></span>
+    </div>
+    <div style="font-weight: bold;text-align: right;margin-top: 10px;margin-right: 23px;  float: right;" class="reqno-url">
+        {{{품의조회}}} <span class="statement-reqno-link" data-reqno="{{os_data.REQNO}}"></span>
+    </div>
+    <table style="margin-top: 10px;">
+        <tr>
+            <th rowspan="2" style="width:5%; text-align: center;">{{{출장자}}}</th>
+            <th rowspan="2" style="width:3%; text-align: center;">{{{직책}}}</th>
+            <th rowspan="2" style="width:5%; text-align: center;">{{{출장지}}}</th>
+            <th colspan="4" style="width:17%; text-align: center;">{{{출장기간}}}</th>
+            <th colspan="2" style="width:10%; text-align: center;">{{{숙박비}}}</th>
+            <th colspan="2" style="width:10%; text-align: center;">{{{식대/잡비}}}</th>
+            <th colspan="2" style="width:10%; text-align: center;">{{{교통비}}}</th>
+            <th colspan="2" style="width:10%; text-align: center;">{{{합계}}}</th>
+        </tr>
+        <tr>
+            <th style="text-align: center;">{{{시작일자}}}</th>
+            <th style="text-align: center;">{{{종료일자}}}</th>
+            <th style="text-align: center;">{{{박수}}}</th>
+            <th style="text-align: center;">{{{일수}}}</th>
+            <th style="text-align: center;">{{{정산}}}</th>
+            <th style="text-align: center;">{{{기준}}}</th>
+            <th style="text-align: center;">{{{정산}}}</th>
+            <th style="text-align: center;">{{{기준}}}</th>
+            <th style="text-align: center;">{{{정산}}}</th>
+            <th style="text-align: center;">{{{기준}}}</th>
+            <th style="text-align: center;">{{{정산}}}</th>
+            <th style="text-align: center;">{{{기준}}}</th>
+        </tr>
+        {{#ot_head}}
+            <tr>
+                <td style="text-align: center;" data-field-description="PERNR_TXT">{{PERNR_TXT}}</td>
+                <td style="text-align: center;" data-field-description="JOB_KEY_TXT">{{JOB_KEY_TXT}}</td>
+                <td style="text-align: center;" data-field-description="CITY_TXT">{{CITY_TXT}}</td>
+                <td style="text-align: center;" data-field-description="FDATE">{{FDATE}}</td>
+                <td style="text-align: center;" data-field-description="TDATE">{{TDATE}}</td>
+                <td style="text-align: center;" data-field-description="TR_NIGHT">{{TR_NIGHT}}</td>
+                <td style="text-align: center;" data-field-description="TR_DAY">{{TR_DAY}}</td>
+                <td style="text-align: center;" data-field-description="ROOM_EXP_A_TXT">{{ROOM_EXP_A_TXT}}</td>
+                <td style="text-align: center;" data-field-description="ROOM_EXP_TXT">{{ROOM_EXP_TXT}}</td>
+                <td style="text-align: center;" data-field-description="DAY_EXP_A_TXT">{{DAY_EXP_A_TXT}}</td>
+                <td style="text-align: center;" data-field-description="DAY_EXP_TXT">{{DAY_EXP_TXT}}</td>
+                <td style="text-align: center;" data-field-description="TRAN_EXP_A_TXT">{{TRAN_EXP_A_TXT}}</td>
+                <td style="text-align: center;" data-field-description="TRAN_EXP_TXT">{{TRAN_EXP_TXT}}</td>
+                <td style="text-align: center;" data-field-description="SUM_EXP_A_TXT">{{SUM_EXP_A_TXT}}</td>
+                <td style="text-align: center;" data-field-description="SUM_EXP_TXT">{{SUM_EXP_TXT}}</td>
+            </tr>
+        {{/ot_head}}
+    </table>
+
+    <div style="margin-top: 35px;"></div>
+    <h3>■ 상세 내용 </h3>
+    {{#ot_data1}}
+        {{#URL}}
+            <div style="font-weight: bold;text-align: right;margin-top: 10px; float: right; margin-left:20px">
+                <!-- data-xxxx 대문자로 입력 하더라도 $(selector).data() 소문자로 출력 됨 -->
+                {{{증빙조회}}} <span class="statement-evidence-link" data-belnr="{{BELNR}}" data-doknr="{{BELNR}}" data-gjahr="{{GJAHR}}" data-bukrs="{{BUKRS}}"></span>
+            </div>
+        {{/URL}}
+        <table id="header" style="margin-top: 10px; table-layout: fixed; word-wrap: break-word">
+            <tr style="text-align: center">
+                <th style="display: none" id="GRONO">{{{GRONO}}}</th>
+                <td style="display: none" data-field-description="REQNO" class="REQNO">{{os_data.REQNO}}</td>
+                <th style="width: 11%">{{{전표번호}}}</th>
+                <th style="width: 13%">{{{전표유형}}}</th>
+                <th style="width: 10%">{{{전기일}}}</th>
+                <th style="width: 10%">{{{증빙일}}}</th>
+                <th style="width: 35%">{{{헤더텍스트}}}</th>
+                <th style="width: 8%">{{{전표통화}}}</th>
+                <th style="width: 10%">{{{환율}}}</th>
+            </tr>
+            <tr>
+                <td data-test="1234" style="text-align: center" data-field-description="BELNR" class="BELNR"><a>{{BELNR}}</a></td>
+                <td data-field-description="FLAG" class="FLAG" style="display: none" >{{FLAG}}</td>
+                <td style="text-align: center" data-field-description="BLART_TXT">{{BLART_TXT}}</td>
+                <td style="text-align: center" data-field-description="BUDAT">{{BUDAT}}</td>
+                <td style="text-align: center" data-field-description="BLDAT">{{BLDAT}}</td>
+                <td style="display: none" data-field-description="FLAG1" id={{BELNR}}>{{FLAG1}}</td>
+                <td data-field-description="BKTXT" class="ellipsis"><span>{{BKTXT}}</span></td>
+                <td style="text-align: center" data-field-description="WAERS">{{WAERS}}</td>
+                <td style="text-align: center;" data-field-description="KURSF">{{KURSF}}</span></td>
+            </tr>
+        </table>
+        <table style="margin-top: 10px; table-layout: fixed; word-wrap: break-word">
+            <tr style="text-align: center">
+                <th style="width: 7%">{{{비용구분}}}</th>
+                <th style="width: 10%">{{{교통수단}}}</th>
+                <th style="width: 6%">{{{출발지}}}</th>
+                <th style="width: 6%">{{{도착지}}}</th>
+                <th style="width: 10%">{{{거리}}}</th>
+                <th style="width: 10%">{{{유종}}}</th>
+                <th style="width: 10%">{{{유류대 (1L당)}}}</th>
+                <th style="width: 10%">{{{연비 (Km/L)}}}</th>
+            </tr>
+            {{#ot_data}}
+                <tr>
+                    <td style="text-align: center" data-field-description="EXP_GB_TXT">{{EXP_GB_TXT}}</td>
+                    <td style="text-align: center" data-field-description="TRAN_TYPE_TXT">{{TRAN_TYPE_TXT}}</td>
+                    <td style="text-align: center" data-field-description="DEPART_TXT">{{DEPART_TXT}}</td>
+                    <td style="text-align: center" data-field-description="DESTIN_TXT">{{DESTIN_TXT}}</td>
+                    <td style="text-align: center" data-field-description="KM_TXT">{{KM_TXT}}</td>
+                    <td style="text-align: center" data-field-description="OIL_TXT">{{OIL_TXT}}</td>
+                    <td style="text-align: center;" data-field-description="GAS_EXP_TXT">{{GAS_EXP_TXT}}</td>
+                    <td style="text-align: center;" data-field-description="GAS_MIL_TXT">{{GAS_MIL_TXT}}</td>
+                </tr>
+            {{/ot_data}}
+        </table>
+        <table id="contents" style="table-layout: fixed; margin-top: 10px;">
+            <tr>
+                <th rowspan="2" style="width: 4%;"><p>{{{순 번}}}</p></th>
+                <th style="width: 20%;">{{{계정과목}}}</th>
+                <th style="width: 20%;">{{{거래처}}}</th>
+                <th style="width: 12%;">{{{거래처코드}}}</th>
+                <th style="width: 12%;">Assignment</th>
+                <th style="width: 10%;">{{{차변}}}(LC)</th>
+                <th style="width: 10%;">{{{대변}}}(LC)</th>
+            </tr>
+            <tr>
+                <th>CC/IO</th>
+                <th>{{{세금코드}}}</th>
+                <th colspan="2">{{{적요}}}</th>
+                <th>{{{차변}}}(TC)</th>
+                <th>{{{대변}}}(TC)</th>
+            </tr>
+            {{#ot_data2}}
+                <tr><!--순번~대변(LC)-->
+                    <td rowspan="2" style="text-align: center" data-field-description="BUZEI COM_EXP">{{BUZEI}}<br>{{COM_EXP}}</td>
+                    <td data-field-description="HKONT_TXT">{{HKONT_TXT}}</td>
+                    <td data-field-description="LIFNR_TXT">{{LIFNR_TXT}}</td>
+                    <td data-field-description="LIFNR">{{LIFNR}}</td>
+                    <td data-field-description="ZUONR">{{ZUONR}}</td>
+                    <td data-field-description="ot_data2.DMBTR_S_TXT ot_data2.WRBTR_S_TXT" rowspan="2" style="text-align: right">{{DMBTR_S_TXT}}<br>{{WRBTR_S_TXT}}</td>
+                    <td data-field-description="ot_data2.DMBTR_H_TXT ot_data2.WRBTR_H_TXT" rowspan="2" style="text-align: right">{{DMBTR_H_TXT}}<br>{{WRBTR_H_TXT}}</td>
+                </tr>
+                <tr><!--CC/IO/WBS~대변(TC)-->
+                    <td data-field-description="KOSTL_TXT2 KOSTL_TXT3">{{KOSTL_TXT2}}<br>{{KOSTL_TXT3}}</td>
+                    <td data-field-description="MWSKZ_TXT">{{MWSKZ_TXT}}</td>
+                    <td colspan="2" data-field-description="SGTXT">{{SGTXT}}</td>
+                </tr>
+            {{/ot_data2}}
+            <tr>
+                <td rowspan="2" colspan="3" style="text-align: center;height: 40px">{{{소계}}}</td>
+                <td  colspan="2" data-field-description="ot_data1.LWAERS">{{LWAERS}}</td>
+                <td data-field-description="ot_data1.DMBTR_S_TXT" style="text-align: right;">{{DMBTR_S_TXT}}</td>
+                <td data-field-description="ot_data1.DMBTR_H_TXT" style="text-align: right;">{{DMBTR_H_TXT}}</td>
+            </tr>
+            <tr>
+                <td colspan="2" data-field-description="ot_data1.WAERS">{{WAERS}}</td>
+                <td data-field-description="ot_data1.WRBTR_S_TXT" style="text-align: right;">{{WRBTR_S_TXT}}</td>
+                <td data-field-description="ot_data1.WRBTR_H_TXT" style="text-align: right;">{{WRBTR_H_TXT}}</td>
+            </tr>
+        </table>
+        <div style="margin-top: 20px;"></div>
+    {{/ot_data1}}
+    <table id="footer" style="margin-top: 10px">
+        <tr>
+            <th style="width: 505px; height: 40px">{{{총계}}}</th>
+            <td data-field-description="os_head.WAERS" style="width: 275px">{{os_head.WAERS}}</td>
+            <td data-field-description="os_head.TOTAL_TXT"
+                style="width: 111px; text-align: right;">{{os_head.TOTAL_TXT}}</td>
+            <td data-field-description="os_head.TOTAL_TXT"
+                style="width: 111px; text-align: right;">{{os_head.TOTAL_TXT}}</td>
+        </tr>
+    </table>
+</div>

@@ -1,0 +1,79 @@
+{{! stache!uni-e-approval/module/approvalLineTemplate }}
+<style>
+    .approval-line-template { font-size: 11px; color: #303030; line-height: 1.4em; position: relative; margin: 20px auto 0; text-align: center;}
+    .approval-line-template-left { width: 250px; position: absolute; left: 0; top: 0; }
+    .approval-line-template-right { margin-left:260px; }
+    .approval-line-template-left table th,
+    .approval-line-template-left th.ellipsis span{ width: 65px; max-width: 65px }
+    .approval-line-template-left table td,
+    .approval-line-template-left td.ellipsis span{ width: 185px; max-width: 185px; }
+    .approval-line-template th,
+    .approval-line-template td {border: 1px solid #ddd;padding: 3px 0;white-space: nowrap; overflow: hidden; height: 22px;}
+    .approval-line-template td pre {text-align: left;}
+    .approval-line-template th {background-color: #f4f4f4;}
+    .approval-line-template td {background-color: #fff;}
+    .approval-line-template td.td-type-2 { padding: 10px 0; font-size: 18px; }
+    .approval-line-template .date-time { height: 32px; }
+    .approval-line-template pre {margin: 0;}
+</style>
+<div class="approval-line-template">
+    <div class="approval-line-template-left">
+        <table>
+            <tr> <th class="ellipsis"><span class="NGB">{{{기안자}}}</span></th> <td data-field-description="WF_ID_TXT MOB_NO" class="ellipsis"><span>{{requester.WF_ID_TXT}}<br>{{requester.MOB_NO}}</span></td> </tr>
+            <tr> <th class="ellipsis"><span class="NGB">{{{기안부서}}}</span></th> <td data-field-description="NODE_KEY_TXT" class="ellipsis"><span>{{requester.NODE_KEY_TXT}}</span></td> </tr>
+            <tr> <th class="ellipsis"><span class="NGB">{{{상신 일시}}}</span></th> <td data-field-description="WF_DATE WF_TIME" class="ellipsis"><span>{{header.WF_DATE}} {{header.WF_TIME}}</span></td> </tr>
+        </table>
+        <!--        <table style="margin-top:10px">-->
+        <!--            <tr> <th class="ellipsis"><span class="NGB">{{{문서 구분}}}</span></th> <td data-field-description="WF_GB_TXT" class="ellipsis"><span>{{header.WF_GB_TXT}}</span></td> </tr>-->
+        <!--            <tr> <th class="ellipsis"><span class="NGB">{{{문서 번호}}}</span></th> <td data-field-description="WF_KEY_TEXT" class="ellipsis"><span>{{header.WF_KEY_TEXT}}</span></td> </tr>-->
+        <!--            <tr> <th class="ellipsis"><span class="NGB">{{{결재 요청}}}</span></th> <td data-field-description="WF_SECUR_TXT" style="color: red;" class="ellipsis"><span>{{header.WF_SECUR_TXT}}</span></td> </tr>-->
+        <!--        </table>-->
+    </div>
+
+    <div class="approval-line-template-right">
+        <table>
+            <tr>
+                <th  class="NGB" rowspan="4" style="min-width: 60px;max-width: 60px;">{{{결재}}}</th>
+                {{#approverList}} <th  class="NGB" style="width:18%" data-field-description="JOB_KEY_TXT">{{JOB_KEY_TXT}}</th> {{/approverList}}
+            </tr>
+            <tr> {{#approverList}} <td class="td-type-2 NGB" data-field-description="WF_ID_TXT">{{WF_LINE_LEV}} {{WF_ID_TXT}}</td> {{/approverList}} </tr>
+            <tr> {{#approverList}} <th  class="NGB" data-field-description="APPR_STAT_TXT">{{APPR_STAT_TXT}}</th> {{/approverList}} </tr>
+            <tr> {{#approverList}} <td class="date-time" data-field-description="APPR_DATE APPR_TIME">{{APPR_DATE}}<br/>{{APPR_TIME}}</td> {{/approverList}} </tr>
+            <tr class="tr-assentient">
+                <th  class="NGB" rowspan="4">{{{회계}}}</th>
+                {{#assentientList}} <th class="NGB" data-field-description="JOB_KEY_TXT">{{JOB_KEY_TXT}}</th> {{/assentientList}}
+            </tr>
+            <tr class="tr-assentient"> {{#assentientList}} <td class="td-type-2 NGB" data-field-description="WF_ID_TXT">{{WF_LINE_LEV}} {{WF_ID_TXT}}</td> {{/assentientList}} </tr>
+            <tr class="tr-assentient"> {{#assentientList}} <th class="NGB" data-field-description="APPR_STAT_TXT">{{APPR_STAT_TXT}}</th> {{/assentientList}} </tr>
+            <tr class="tr-assentient"> {{#assentientList}} <td class="date-time" data-field-description="APPR_DATE APPR_TIME">{{APPR_DATE}}<br/>{{APPR_TIME}}</td> {{/assentientList}} </tr>
+        </table>
+    </div>
+
+    <table class="approval-comments" style="margin-top: 10px;" data-field-description="zuniewf_4323_ot_data">
+        <tr>
+            <th class="NGB" style="width:40px">{{{구분}}}</th>
+            <th class="NGB" style="width:150px">{{{결재/합의자}}}</th>
+            <th class="NGB" style="width:130px">{{{일시}}}</th>
+            <th class="NGB" scope="col">{{{의견}}}</th>
+        </tr>
+        {{#zuniewf_4323_ot_data}}
+            <tr>
+                <th class="NGB" data-field-description="APPR_STAT_TXT">{{APPR_STAT_TXT}}</th>
+                <td data-field-description="APPR_DEPT_TXT APPR_ID_TXT JOB_KEY_TXT">{{APPR_DEPT_TXT}}/{{APPR_ID_TXT}}/{{JOB_KEY_TXT}}</td>
+                <td data-field-description="APPR_DATE APPR_TIME">{{APPR_DATE}} {{APPR_TIME}}</td>
+                <td><pre style="white-space: pre-wrap;" data-field-description="APPR_TEXT">{{APPR_TEXT}}</pre></td>
+            </tr>
+        {{/zuniewf_4323_ot_data}}
+    </table>
+
+    <table class="approval-referrer" style="margin-top:10px">
+        <tr id="wf-line-2"> <th class="NGB" style="width:40px;">{{{참조}}}</th> <td style="text-align: left;padding-left: 5px;" data-field-description="referrerList">{{referrerList}}</td> </tr>
+        <tr id="wf-line-3"> <th class="NGB" style="width:40px;">{{{열람}}}</th> <td style="text-align: left;padding-left: 5px;" data-field-description="readerList">{{readerList}}</td> </tr>
+        <tr id="wf-line-4"> <th class="NGB" style="width:40px;">{{{협조}}}</th> <td style="text-align: left;padding-left: 5px;" data-field-description="supporterList">{{supporterList}}</td> </tr>
+    </table>
+</div>
+
+
+
+
+

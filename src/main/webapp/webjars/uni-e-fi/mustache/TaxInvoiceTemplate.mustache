@@ -1,0 +1,339 @@
+{{! stache!uni-e-fi/mustache/TaxInvoiceTemplate }}
+<div id="contents" style="width: 730px; padding: 10px;">
+    <div style="width:730px; padding: 15px;">
+        <table>
+            <tr>
+                <td rowspan="3" style="width:364px; text-align: center;" data-field-description="TYPE_CODE">
+                    <span class="table_menu_title_bluebold1" style="letter-spacing: 5px;">
+                        {{#TYPE_CODE_IS_0101}}전자세금계산서{{/TYPE_CODE_IS_0101}}
+                        {{#TYPE_CODE_IS_0102}}영세율세금계산서{{/TYPE_CODE_IS_0102}}
+                        {{#TYPE_CODE_IS_0103}}위수탁세금계산서{{/TYPE_CODE_IS_0103}}
+                        {{#TYPE_CODE_IS_0104}}수입세금계산서{{/TYPE_CODE_IS_0104}}
+                        {{#TYPE_CODE_IS_0105}}영세율위수탁세금계산서{{/TYPE_CODE_IS_0105}}
+                        {{#TYPE_CODE_IS_0201}}수정일반세금계산서{{/TYPE_CODE_IS_0201}}
+                        {{#TYPE_CODE_IS_0202}}수정전자세금계산서{{/TYPE_CODE_IS_0202}}
+                        {{#TYPE_CODE_IS_0203}}수정위수탁세금계산서{{/TYPE_CODE_IS_0203}}
+                        {{#TYPE_CODE_IS_0204}}수정수입세금계산서{{/TYPE_CODE_IS_0204}}
+                        {{#TYPE_CODE_IS_0205}}수정영세율위수탁세금계산서{{/TYPE_CODE_IS_0205}}
+                        {{#TYPE_CODE_IS_0301}}전자계산서{{/TYPE_CODE_IS_0301}}
+                        {{#TYPE_CODE_IS_0303}}위수탁계산서{{/TYPE_CODE_IS_0303}}
+                        {{#TYPE_CODE_IS_0304}}수입계산서{{/TYPE_CODE_IS_0304}}
+                        {{#TYPE_CODE_IS_0401}}수정전자계산서{{/TYPE_CODE_IS_0401}}
+                        {{#TYPE_CODE_IS_0403}}수정위수탁계산서{{/TYPE_CODE_IS_0403}}
+                        {{#TYPE_CODE_IS_0404}}수정수입계산서{{/TYPE_CODE_IS_0404}}
+                        </span>
+                </td>
+                <td style="width:82px; height:24px; text-align:center;"><span class="table_menu_blue">승인번호</span></td>
+                <td class="table_menu_padding table_menu_graybold formatted_issue_id" data-field-description="ISSUE_ID">{{FORMATTED_ISSUE_ID}}</td>
+            </tr>
+            <tr>
+                <td style="height:24px; text-align:center;"><span class="table_menu_blue">당초 승인번호</span></td>
+                <td class="table_menu_padding table_menu formatted_issue_id_old" data-field-description="ISSUE_ID_OLD">{{FORMATTED_ISSUE_ID_OLD}}</td>
+            </tr>
+            <tr>
+                <td style="height:24px; text-align:center;"><span class="table_menu_blue">관리번호</span></td>
+                <td class="table_menu_padding table_menu inter_no" data-field-description="INTER_NO">{{first_ot_data.INTER_NO}}</td>
+            </tr>
+        </table>
+
+        <table>
+            <tr>
+                <td rowspan="6" style="width:22px; text-align:center; letter-spacing:3px;" class="table_menu_bluebold2">공급자</td>
+                <td style="width:59px; height:39px; text-align:center;">등록<br/>번호</td>
+                <td style="width:112px; height:39px; text-align:left" class="table_menu">
+                    <span class="table_menu_padding table_menu_graybold formatted_su_id" data-field-description="SU_ID">{{FORMATTED_SU_ID}}</span>
+                </td>
+                <td style="width:59px; height:39px; text-align:center;">종사업<br/>장번호</td>
+                <td style="width:110px; height:39px;">
+                    <span class="table_menu_padding table_menu_graybold su_min" data-field-description="SU_MIN">{{first_ot_data.SU_MIN}}</span>
+                </td>
+                <td rowspan="6" style="width:22px; text-align:center; letter-spacing:3px;" class="table_menu_bluebold2">공급받는자</td>
+                <td style="width:59px; height:39px; text-align:center;">등록<br/>번호</td>
+                <td style="width:116px; height:39px;">
+                    <span class="table_menu_padding table_menu_graybold formatted_ip_id" data-field-description="IP_ID">{{FORMATTED_IP_ID}}</span>
+                </td>
+                <td style="width:59px; height:39px; text-align:center;">종사업<br/>장번호</td>
+                <td style="width:103px; height:39px;">
+                    <span class="table_menu_padding table_menu_graybold ip_min" data-field-description="IP_MIN">{{first_ot_data.IP_MIN}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td style="height:39px; text-align:center;">상호<br/>(법인명)</td>
+                <td style="height:39px;" class="table_menu_padding table_menu su_name" data-field-description="SU_NAME">{{first_ot_data.SU_NAME}}</td>
+                <td style="height:39px; text-align:center;">성명</td>
+                <td style="height:39px;" class="table_menu_padding table_menu su_repres" data-field-description="SU_REPRES">{{first_ot_data.SU_REPRES}}</td>
+                <td style="height:39px; text-align:center;">상호<br/>(법인명)</td>
+                <td style="height:39px;">
+                    <span class="table_menu_padding table_menu ip_name" data-field-description="IP_NAME"> {{first_ot_data.IP_NAME}}</span>
+                </td>
+                <td style="height:39px; text-align:center;">성명</td>
+                <td style="height:39px;" class="table_menu_padding table_menu ip_repres" data-field-description="IP_REPRES">{{first_ot_data.IP_REPRES}}</td>
+            </tr>
+            <tr>
+                <td style="height:39px; text-align:center;">사업장<br/>주소</td>
+                <td colspan="3" style="height:39px;" class="table_menu_padding table_menu su_addr" data-field-description="SU_ADDR">{{first_ot_data.SU_ADDR}}</td>
+                <td style="height:39px; text-align:center;">사업장<br/>주소</td>
+                <td colspan="3" style="height:39px;" class="table_menu_padding table_menu ip_addr" data-field-description="IP_ADDR">{{first_ot_data.IP_ADDR}}</td>
+            </tr>
+            <tr>
+                <td style="height:26px; text-align:center;">업태</td>
+                <td style="height:26px;" class="table_menu_padding table_menu su_bustype" data-field-description="SU_BUSTYPE">{{first_ot_data.SU_BUSTYPE}}</td>
+                <td style="height:26px; text-align:center;">종목</td>
+                <td style="height:26px;" class="table_menu_padding table_menu su_indtype" data-field-description="SU_INDTYPE">{{first_ot_data.SU_INDTYPE}}</td>
+                <td style="height:26px; text-align:center;">업태</td>
+                <td style="height:26px;" class="table_menu_padding table_menu ip_bustype" data-field-description="IP_BUSTYPE">{{first_ot_data.IP_BUSTYPE}}</td>
+                <td style="height:26px; text-align:center;">종목</td>
+                <td style="height:26px;" class="table_menu_padding table_menu ip_indtype" data-field-description="IP_INDTYPE">{{first_ot_data.IP_INDTYPE}}</td>
+            </tr>
+            <tr>
+                <td rowspan="2" style="height:52px; text-align:center;">이메일</td>
+                <td rowspan="2" colspan="3" style="height:52px;" class="table_menu_padding table_menu su_bustype" data-field-description="SU_EMAIL">{{first_ot_data.SU_EMAIL}}</td>
+                <td style="height:26px; text-align:center;">이메일</td>
+                <td colspan="3" style="height:26px;" class="table_menu_padding table_menu ip_bustype" data-field-description="IP_EMAIL1">{{first_ot_data.IP_EMAIL1}}</td>
+            </tr>
+            <tr>
+                <td style="height:26px; text-align:center;">이메일</td>
+                <td colspan="3" style="height:26px;" class="table_menu_padding table_menu ip_bustype" data-field-description="IP_EMAIL2">{{first_ot_data.IP_EMAIL2}}</td>
+            </tr>
+        </table>
+
+        <!-- modify end-->
+
+        <!-- 위수탁 -->
+        {{#TYPE_CODE_SUBSTR_2_2_IS_03}}
+            <table>
+                <tr>
+                    <td style="width:81px; height:30px; text-align:center;">작성일자</td>
+                    <td style="width:112px; height:27px; text-align:center;"
+                        class="table_menu_graybold formatted_issue_date" data-field-description="ISSUE_DATE">{{FORMATTED_ISSUE_DATE}}
+                    </td>
+                    <td style="width:59px; height:27px; text-align:center;"><span class="table_menu_bluebold1">수정사유</span></td>
+                    <td style="width:110px; height:27px; text-align:center;">
+                        <span class="table_menu_graybold" data-field-description="AMEND_CODE">
+                        {{#AMEND_CODE_IS_01}}기재사항 착오·정정{{/AMEND_CODE_IS_01}}
+                            {{#AMEND_CODE_IS_02}}공급가액 변동{{/AMEND_CODE_IS_02}}
+                            {{#AMEND_CODE_IS_03}}환입{{/AMEND_CODE_IS_03}}
+                            {{#AMEND_CODE_IS_04}}계약의 해제{{/AMEND_CODE_IS_04}}
+                            {{#AMEND_CODE_IS_05}}내국신용장 사후 개설{{/AMEND_CODE_IS_05}}
+                            {{#AMEND_CODE_IS_06}}착오로인한 이중발행{{/AMEND_CODE_IS_06}}
+                        </span>
+                    </td>
+                    <td rowspan="4" style="width:22px; height:27px; text-align:center; letter-spacing:3px;" class="table_menu_bluebold2">수탁자</td>
+                    <td style="width:59px; height:27px; text-align:center;"><span class="table_menu_blue">등록번호</span></td>
+                    <td style="width:116px; height:27px;">
+                        <span class="table_menu_padding table_menu_graybold formatted_bp_id" data-field-description="BP_ID">{{FORMATTED_BP_ID}}</span>
+                    </td>
+                    <td style="width:59px; height:27px; text-align:center;"><span class="table_menu_blue">종사업<br/>장번호</span></td>
+                    <td style="width:103px; height:27px;">
+                        <span class="table_menu bp_min" data-field-description="BP_MIN">{{first_ot_data.BP_MIN}} </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="height:30px; text-align:center;" class="table_menu_bluebold1">공급가액</td>
+                    <td colspan="3" style="height:27px; text-align:right; padding-right:5px;"
+                        class="table_menu_graybold formatted_chargetotal" data-field-description="CHARGETOTAL">{{FORMATTED_CHARGETOTAL}}
+                    </td>
+                    <td style="height:27px; text-align:center;"><span class="table_menu_blue">상호<br/>(법인명)</span></td>
+                    <td style="height:27px;">
+                        <span class="table_menu_padding table_menu bp_name"
+                              data-field-description="BP_NAME">{{first_ot_data.BP_NAME}}
+                        </span>
+                    </td>
+                    <td style="height:27px; text-align:center;"><span class="table_menu_blue">성명</span></td>
+                    <td style="height:27px;">
+                        <span class="table_menu bp_repres" data-field-description="BP_REPRES">{{first_ot_data.BP_REPRES}} </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="height:30px; text-align:center;" class="table_menu_bluebold1">세액</td>
+                    <td colspan="3" style="height:27px; text-align:right; padding-right:5px;"
+                        class="table_menu_graybold formatted_taxtotal" data-field-description="TAXTOTAL">{{FORMATTED_TAXTOTAL}}
+                    </td>
+                    <td style="height:27px; text-align:center;"><span class="table_menu_blue">사업장<br/>주소</span></td>
+                    <td colspan="3" style="height:27px;">
+                        <span class="table_menu_padding table_menu bp_addr" data-field-description="BP_ADDR">{{first_ot_data.BP_ADDR}}</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="height:27px; text-align:center;" class="table_menu_bluebold1">비고</td>
+                    <td colspan="3" style="height:27px;"
+                        class="table_menu_padding table_menu desc_text1" data-field-description="DESC_TEXT1">{{first_ot_data.DESC_TEXT1}}
+                    </td>
+                    <td style="height:27px; text-align:center;"><span class="table_menu_blue">업태</span></td>
+                    <td style="height:27px;">
+                        <span class="table_menu_padding table_menu bp_bustype" data-field-description="BP_BUSTYPE">{{first_ot_data.BP_BUSTYPE}}</span>
+                    </td>
+                    <td style="height:27px; text-align:center;"><span class="table_menu_blue">종목</span></td>
+                    <td style="height:27px;">
+                        <span class="table_menu bp_indtype" data-field-description="BP_INDTYPE">{{first_ot_data.BP_INDTYPE}} </span>
+                    </td>
+                </tr>
+            </table>
+        {{/TYPE_CODE_SUBSTR_2_2_IS_03}}
+        <!-- 전자계산서 -->
+        {{^TYPE_CODE_SUBSTR_2_2_IS_03}}
+            <table>
+                <tr>
+                    <td style="width:81px; height:27px; text-align:center; letter-spacing:3px;" class="table_menu_bluebold1">작성일자</td>
+                    <td colspan="3" style="width:284px; height:27px; text-align:center;" class="table_menu_graybold">
+                        <span class="table_menu_bluebold1">공급가액</span>
+                    </td>
+                    {{#TYPE_CODE_SUBSTR_0_2_IS_03_OR_04}}
+                        <td colspan="4" style="width:365px; height:27px; text-align:center;"><span class="table_menu_bluebold1">수정사유</span></td>
+                    {{/TYPE_CODE_SUBSTR_0_2_IS_03_OR_04}}
+                    {{^TYPE_CODE_SUBSTR_0_2_IS_03_OR_04}}
+                        <td colspan="2" style="width:182px; height:27px; text-align:center;"><span class="table_menu_bluebold1">세액</span></td>
+                        <td colspan="2" style="width:182px; height:27px; text-align:center;"><span class="table_menu_bluebold1">수정사유</span></td>
+                    {{/TYPE_CODE_SUBSTR_0_2_IS_03_OR_04}}
+                </tr>
+                <tr>
+                    <td style="height:27px; text-align:center;"
+                        class="table_menu_graybold formatted_issue_date" data-field-description="ISSUE_DATE">{{FORMATTED_ISSUE_DATE}}
+                    </td>
+                    <td colspan="3" style="height:27px; text-align:right; padding-right:5px;"
+                        class="table_menu_graybold formatted_chargetotal" data-field-description="CHARGETOTAL">{{FORMATTED_CHARGETOTAL}}
+                    </td>
+                    {{#TYPE_CODE_SUBSTR_0_2_IS_03_OR_04}} <!-- 03 또는 04 면 전자계산서 -->
+                        <td colspan="4" style="height:27px;">
+                            {{#AMEND_CODE_IS_01}}기재사항 착오·정정{{/AMEND_CODE_IS_01}}
+                            {{#AMEND_CODE_IS_02}}공급가액 변동{{/AMEND_CODE_IS_02}}
+                            {{#AMEND_CODE_IS_03}}환입{{/AMEND_CODE_IS_03}}
+                            {{#AMEND_CODE_IS_04}}계약의 해제{{/AMEND_CODE_IS_04}}
+                            {{#AMEND_CODE_IS_05}}내국신용장 사후 개설{{/AMEND_CODE_IS_05}}
+                            {{#AMEND_CODE_IS_06}}착오로인한 이중발행{{/AMEND_CODE_IS_06}}
+                        </td>
+                    {{/TYPE_CODE_SUBSTR_0_2_IS_03_OR_04}}
+                    {{^TYPE_CODE_SUBSTR_0_2_IS_03_OR_04}}
+                        <td colspan="2" style="height:27px; text-align:right; padding-right:5px;"
+                            class="table_menu_graybold formatted_taxtotal" data-field-description="TAXTOTAL">{{FORMATTED_TAXTOTAL}}</td>
+                        <td colspan="2" style="height:27px;" data-field-description="AMEND_CODE">
+                            {{#AMEND_CODE_IS_01}}기재사항 착오·정정{{/AMEND_CODE_IS_01}}
+                            {{#AMEND_CODE_IS_02}}공급가액 변동{{/AMEND_CODE_IS_02}}
+                            {{#AMEND_CODE_IS_03}}환입{{/AMEND_CODE_IS_03}}
+                            {{#AMEND_CODE_IS_04}}계약의 해제{{/AMEND_CODE_IS_04}}
+                            {{#AMEND_CODE_IS_05}}내국신용장 사후 개설{{/AMEND_CODE_IS_05}}
+                            {{#AMEND_CODE_IS_06}}착오로인한 이중발행{{/AMEND_CODE_IS_06}}
+                        </td>
+                    {{/TYPE_CODE_SUBSTR_0_2_IS_03_OR_04}}
+                </tr>
+                <tr>
+                    <td style="width:81px; height:27px; text-align:center;" class="table_menu_bluebold1">비고</td>
+                    <td colspan="7" style="height:27px;" class="table_menu_padding table_menu desc_text1"
+                        style="padding-left:5px" data-field-description="DESC_TEXT1">{{first_ot_data.DESC_TEXT1}}
+                    </td>
+                </tr>
+            </table>
+        {{/TYPE_CODE_SUBSTR_2_2_IS_03}}
+
+        <table style="width:730px;">
+            <tr>
+                <td style="width:32px; height:27px; text-align:center;" class="table_menu_bluebold">월</td>
+                <td style="width:33px; height:27px; text-align:center;" class="table_menu_bluebold">일</td>
+                <td colspan="2" style="width:264px; height:27px; text-align:center;"><span class="table_menu_bluebold">품목</span></td>
+                <td style="width:43px; height:27px; text-align:center;"><span class="table_menu_bluebold">규격</span></td>
+                <td style="width:44px; height:27px; text-align:center;"><span class="table_menu_bluebold">수량</span></td>
+                <td style="width:88px; height:27px; text-align:center;"><span class="table_menu_bluebold">단가</span></td>
+                <td style="width:88px; height:27px; text-align:center;"><span class="table_menu_bluebold">공급가격</span>
+                </td>
+                {{#TYPE_CODE_SUBSTR_0_2_IS_03_OR_04}} <!-- 03 또는 04 면 전자계산서 -->
+                    <td colspan="2" style="width:145px; height:27px; text-align:center;"><span class="table_menu_bluebold">비고</span></td>
+                {{/TYPE_CODE_SUBSTR_0_2_IS_03_OR_04}}
+                {{^TYPE_CODE_SUBSTR_0_2_IS_03_OR_04}}
+                    <td style="width:92px; height:27px; text-align:center;"><span class="table_menu_bluebold">세액</span></td>
+                    <td style="width:47px; height:28px; text-align:center;"><span class="table_menu_bluebold">비고</span></td>
+                {{/TYPE_CODE_SUBSTR_0_2_IS_03_OR_04}}
+            </tr>
+            {{#TYPE_CODE_SUBSTR_0_2_IS_03_OR_04}} <!-- 03 또는 04 면 전자계산서 -->
+                {{#ot_data2}}
+                    <tr>
+                        <td style="height:27px; text-align:center;">
+                            <span class="table_menu good_date_substr_4_2" data-field-description="GOOD_DATE">{{GOOD_DATE_SUBSTR_4_2}}</span>
+                        </td>
+                        <td style="height:27px; text-align:center;">
+                            <span class="table_menu good_date_substr_6_2" data-field-description="GOOD_DATE">{{GOOD_DATE_SUBSTR_6_2}}</span>
+                        </td>
+                        <td colspan="2" style="height:27px;">
+                            <span class="table_menu_padding table_menu good_name" data-field-description="GOOD_NAME">{{GOOD_NAME}}</span>
+                        </td>
+                        <td style="height:27px; text-align:center;" class="table_menu good_info" data-field-description="GOOD_INFO">{{GOOD_INFO}}</td>
+                        <td style="height:27px; text-align:right;" class="table_menu formatted_good_quan" data-field-description="GOOD_QUAN">
+                            <span style="padding-right:5px;">{{FORMATTED_GOOD_QUAN}}</span>
+                        </td>
+                        <td style="height:27px; text-align:right;" class="table_menu formatted_good_uniamount" data-field-description="GOOD_UNIAMOUNT">
+                            <span style="padding-right:5px;">{{FORMATTED_GOOD_UNIAMOUNT}}</span>
+                        </td>
+                        <td style="height:27px; text-align:right;" class="table_menu formatted_good_invamount" data-field-description="GOOD_INVAMOUNT">
+                            <span style="padding-right:5px;">{{FORMATTED_GOOD_INVAMOUNT}}</span>
+                        </td>
+                        <td colspan="2" style="height:27px;" class="table_menu good_desc" data-field-description="GOOD_DESC">
+                            <span style="padding-left:5px;">{{GOOD_DESC}}</span>
+                        </td>
+                    </tr>
+                {{/ot_data2}}
+            {{/TYPE_CODE_SUBSTR_0_2_IS_03_OR_04}}
+            {{^TYPE_CODE_SUBSTR_0_2_IS_03_OR_04}}
+                {{#ot_data2}}
+                    <tr>
+                        <td style="height:27px; text-align:center;">
+                            <span class="table_menu good_date_substr_4_2" data-field-description="GOOD_DATE">{{GOOD_DATE_SUBSTR_4_2}}</span>
+                        </td>
+                        <td style="height:27px; text-align:center;">
+                            <span class="table_menu good_date_substr_6_2" data-field-description="GOOD_DATE">{{GOOD_DATE_SUBSTR_6_2}}</span>
+                        </td>
+                        <td colspan="2" style="height:27px; padding-left:5px;">
+                            <span class="table_menu good_name" data-field-description="GOOD_NAME">{{GOOD_NAME}}</span>
+                        </td>
+                        <td style="height:27px; text-align:center;" class="table_menu good_info" data-field-description="GOOD_INFO">{{GOOD_INFO}}</td>
+                        <td style="height:27px; text-align:right;" class="table_menu formatted_good_quan" data-field-description="GOOD_QUAN">
+                            <span style="padding-right:5px;">{{FORMATTED_GOOD_QUAN}}</span>
+                        </td>
+                        <td style="height:27px; text-align:right;" class="table_menu formatted_good_uniamount" data-field-description="GOOD_UNIAMOUNT">
+                            <span style="padding-right:5px;">{{FORMATTED_GOOD_UNIAMOUNT}}</span>
+                        </td>
+                        <td style="height:27px; text-align:right;" class="table_menu formatted_good_invamount" data-field-description="GOOD_INVAMOUNT">
+                            <span style="padding-right:5px;">{{FORMATTED_GOOD_INVAMOUNT}}</span>
+                        </td>
+                        <td style="height:27px; text-align:right;" class="table_menu formatted_good_taxamount">
+                            <span style="padding-right: 5px;">{{FORMATTED_GOOD_TAXAMOUNT}}</span>
+                        </td>
+                        <td style="height:27px;" class="table_menu good_desc">
+                            <span style="padding-left:5px;" data-field-description="GOOD_DESC">{{GOOD_DESC}}</span>
+                        </td>
+                    </tr>
+                {{/ot_data2}}
+            {{/TYPE_CODE_SUBSTR_0_2_IS_03_OR_04}}
+        </table>
+
+        <table style="width:730px;">
+            <tr>
+                <td colspan="2" style="width:134px; height:27px; text-align:center;" class="table_menu_bluebold">합계금액</td>
+                <td style="width:69px; height:27px; text-align:center;" class="table_menu_bluebold">현금</td>
+                <td style="width:68px; height:27px; text-align:center;" class="table_menu_bluebold">수표</td>
+                <td style="width:75px; height:27px; text-align:center;" class="table_menu_bluebold">어음</td>
+                <td colspan="2" style="width:132px; height:27px; text-align:center;" class="table_menu_bluebold">외상미수금</td>
+                <td colspan="3" rowspan="2" style="width:227px; text-align:center;">
+                        <span class="table_menu">
+                        이 금액을 (
+                        <span class="table_menu_graybold" data-field-description="PURP_CODE">
+                        {{#PURP_CODE_IS_01}}영수{{/PURP_CODE_IS_01}} {{#PURP_CODE_IS_02}} 청구{{/PURP_CODE_IS_02}}
+                        </span> ) 함.
+                        </span>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="width:140px; height:27px; text-align:right;" class="table_menu">
+                        <span class="table_menu_graybold formatted_grandtotal" style="padding-right:5px;"
+                              data-field-description="GRANDTOTAL">{{FORMATTED_GRANDTOTAL}} </span>
+                </td>
+                <td style="width:73px; height:27px; text-align:right;" class="table_menu"></td>
+                <td style="width:73px; height:27px; text-align:right;" class="table_menu"></td>
+                <td style="width:73px; height:27px; text-align:right;" class="table_menu"></td>
+                <td colspan="2" style="width:132px; height:27px; text-align:right;" class="table_menu"></td>
+            </tr>
+        </table>
+
+    </div>
+    <div style="text-align:right; margin-top:20px; width:730px; display:inline-block;" class="print-tax-invoice">
+        <a href="javascript:window.print();">인쇄</a>
+    </div>
+</div>

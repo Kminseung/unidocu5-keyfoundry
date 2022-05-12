@@ -1,0 +1,13 @@
+{{! stache!uni-e-fi/$efi/requestApprovalConfirmTemplate }}
+<div>
+    <p id="message" style="text-align: center;">{{message}}</p>
+    <table class="unidocu-table custom1" style="margin-top: 10px;">
+        {{#tableContents}}
+            <tr>
+                <th class="unidocu-th">{{title}}</th>
+                <td class="unidocu-td ellipsis" style="max-width: 300px;"><span>{{value}}</span></td>
+            </tr>
+        {{/tableContents}}
+    </table>
+    <p style="margin-top: 10px; text-align: center;"> {{question}} </p>
+</div>

@@ -1,0 +1,33 @@
+<table style="text-align: left; border-collapse: collapse; font-size: small; width: 700px;" border="1">
+    <tr>
+        <th style="background-color: #ddd; width: 100px; font-weight: normal;padding-left: 10px;">상신자</th>
+        <td style="padding-left:  10px;">{{WF_ID_TXT}}</td>
+    </tr>
+    <tr>
+        <th style="background-color: #ddd; width: 100px; font-weight: normal;padding-left: 10px;">상신일자</th>
+        <td style="padding-left:  10px;">{{WF_DATE}}</td>
+    </tr>
+    <tr>
+        <th style="background-color: #ddd; width: 100px; font-weight: normal;padding-left: 10px;">문서번호</th>
+        <td style="padding-left:  10px;">{{WF_KEY_TEXT}}</a></td>
+    </tr>
+</table>
+
+{{#comments}}
+<table style="text-align: left; border-collapse: collapse; font-size: small; width: 700px; margin-top: 10px;" border="1">
+    <tr>
+        <th style="background-color: #ddd; width: 100px; font-weight: normal;padding-left: 10px;">의견</th>
+        <td style="padding-left:  10px;"><pre>{{comments}}</pre></td>
+    </tr>
+</table>
+{{/comments}}
+
+{{#WF_MAIL_CONTENTS}}
+<table style="text-align: left; border-collapse: collapse; font-size: small; width: 700px; margin-top: 10px;" border="1">
+    <tr>
+        <th style="background-color: #ddd; width: 100px; font-weight: normal;padding-left: 10px;">내용</th>
+        <td style="padding-left:  10px;"><pre>{{{WF_MAIL_CONTENTS}}}</pre></td>
+    </tr>
+</table>
+{{/WF_MAIL_CONTENTS}}
+<a style="margin-top: 10px;" href="{{redirectUrl}}" target="_blank">결재문서 확인</a>

@@ -1,0 +1,36 @@
+{{! stache!uni-e-fi/$efi/afterCreateStatementDialogTemplate }}
+<div>
+    <p id="message" style="text-align: center;">
+        {{#mode_statement_modify}} {{{전표가 정상적으로 수정 되었습니다}}} {{/mode_statement_modify}}
+        {{#mode_create_statement}} {{{전표가 정상적으로 생성 되었습니다}}} {{/mode_create_statement}}
+        {{#mode_create_statement_draft_0061}} {{{작성이 완료 되었습니다}}} {{/mode_create_statement_draft_0061}}
+        {{#mode_request_business_trip_expenses}} {{{품의 신청이 완료되었습니다}}} {{/mode_request_business_trip_expenses}}
+        {{#mode_create_statement_business_trip_expenses}} {{{품의 정산이 완료되었습니다}}} {{/mode_create_statement_business_trip_expenses}}
+    </p>
+    <table class="unidocu-table custom1" style="margin-top: 10px;">
+        {{^mode_create_statement_draft_0061}}
+            {{^mode_create_statement_business_trip_expenses}}
+                {{^mode_request_business_trip_expenses}}
+                    <tr> <th class="unidocu-th">{{{전표번호}}}</th> <td class="unidocu-td ellipsis" style="max-width: 300px;"><span>{{BELNR}}</span></td> </tr>
+                    <tr> <th class="unidocu-th">{{{회사코드}}}</th> <td class="unidocu-td ellipsis" style="max-width: 300px;"><span>{{BUKRS}}</span></td> </tr>
+                    <tr> <th class="unidocu-th">{{{회계년도}}}</th> <td class="unidocu-td ellipsis" style="max-width: 300px;"><span>{{GJAHR}}</span></td> </tr>
+                {{/mode_request_business_trip_expenses}}
+            {{/mode_create_statement_business_trip_expenses}}
+        {{/mode_create_statement_draft_0061}}
+        {{#mode_create_statement_draft_0061}}
+            <tr> <th class="unidocu-th">{{{출장비정산번호}}}</th> <td class="unidocu-td ellipsis">{{REQTXT}}</td> </tr>
+        {{/mode_create_statement_draft_0061}}
+        {{#mode_request_business_trip_expenses}}
+            <tr> <th class="unidocu-th">{{{출장비신청번호}}}</th> <td class="unidocu-td ellipsis">{{REQNO}}</td> </tr>
+        {{/mode_request_business_trip_expenses}}
+        {{#mode_create_statement_business_trip_expenses}}
+            <tr> <th class="unidocu-th">{{{출장비정산번호}}}</th> <td class="unidocu-td ellipsis">{{REQNO}}</td> </tr>
+        {{/mode_create_statement_business_trip_expenses}}
+    </table>
+    <p id="question" style="margin-top: 10px; text-align: center;">
+        {{#mode_create_statement}} {{{전표작성을 계속 하시겠습니까?}}} {{/mode_create_statement}}
+        {{#mode_create_statement_draft_0061}} {{{신규 작성을 진행 하시겠습니까?}}} {{/mode_create_statement_draft_0061}}
+        {{#mode_request_business_trip_expenses}} {{{신규 작성을 진행 하시겠습니까?}}} {{/mode_request_business_trip_expenses}}
+        {{#mode_create_statement_business_trip_expenses}} {{{신규 작성을 진행 하시겠습니까?}}} {{/mode_create_statement_business_trip_expenses}}
+    </p>
+</div>

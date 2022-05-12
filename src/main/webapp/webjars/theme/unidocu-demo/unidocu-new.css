@@ -1,0 +1,250 @@
+.unidocu_new .board-list .NGB .title, .unidocu_new .board-list .NGB .date {
+    color: #219dcb;
+}
+
+.unidocu_new .board-list tr:hover {
+    background-color: rgba(33,157,203,0.04);
+}
+
+.unidocu_new .count-box-wrapper:nth-child(1) .count-box i:before {
+    content: '\e800';
+    color: #219dcb;
+}
+
+.unidocu_new .count-box-wrapper:nth-child(1) .count-box i:after {
+    background-color: rgba(33,157,203,0.15);
+}
+
+.unidocu_new .count-box-wrapper:nth-child(2) .count-box i:before {
+    content: '\e870';
+    color: #f05333;
+}
+
+.unidocu_new .count-box-wrapper:nth-child(2) .count-box i:after {
+    background-color: rgba(240,38,51,0.15);
+}
+
+.unidocu_new .count-box-wrapper:nth-child(3) .count-box i:before {
+    content: '\e805';
+    color: #9cb227;
+}
+
+.unidocu_new .count-box-wrapper:nth-child(3) .count-box i:after {
+    background-color: rgba(156,178,39,0.15);
+}
+
+.unidocu_new .unidocu-button.blue {
+    border-color: #219dcb;
+}
+
+.unidocu_new.layout-left #sider {
+    height: calc(100% - 50px);
+    width: 215px;
+    border: 1px solid #c5c5c6;
+    border-bottom: none;
+    top: 50px;
+    position: fixed !important;
+    overflow: auto;
+    z-index: 3;
+}
+
+.unidocu_new.layout-left .main-menu-wrapper .main-folder-icon:before { content: "\e8ad"; opacity: 0.6; } /* expand */
+.unidocu_new.layout-left .main-menu-wrapper.expanded .main-folder-icon:before { content: "\e8ac"; opacity: 1; } /* compress */
+.unidocu_new.layout-left .main-menu-text-wrapper .main-folder-icon { margin-left: 10px; font-size: 42px; }
+.unidocu_new.layout-left .middle-menu-wrapper { background-color: #f5f5f5; }
+.unidocu_new.layout-left .middle-menu-wrapper:hover { background-color: #EBF7FF; }
+
+
+.unidocu_new.layout-left .middle-menu-text-wrapper,
+.unidocu_new.layout-left .middle-menu-text-wrapper .unicon { line-height: 40px; height: 40px; vertical-align: top; }
+.unidocu_new.layout-left .middle-menu-text-wrapper .ico-uni-doc { margin-left: 21px; font-size: 25px; display: none !important; }
+.unidocu_new.layout-left .middle-menu-text-wrapper .middle-menu-text { margin-left: 20px; color: #222; display: inline-block; max-width: 150px; }
+
+.unidocu_new.layout-left .middle-ul { padding: 8px 0; background-color: #fff; }
+
+.unidocu_new.layout-left .leaf-menu-text-wrapper,
+.unidocu_new.layout-left .leaf-menu-text-wrapper .leaf-menu-text { height: 24px; line-height: 24px; margin-left: 8px; display: inline-block; }
+
+.unidocu_new.layout-left .dot span { display: none; height: 4px; width: 4px; background-color: #219dcb; border-radius: 50%; position: relative; top: -3px; }
+.unidocu_new.layout-left .leaf-node.selected .leaf-menu-text-wrapper .leaf-menu-text { margin-left: 4px; }
+.unidocu_new.layout-left .leaf-node :hover,
+.unidocu_new.layout-left .leaf-node.selected { color: #219dcb; }
+.unidocu_new.layout-left .menu-font-size-large { font-size: 16px; font-family: "SCD-5", sans-serif; }
+.unidocu_new.layout-left .main-menu-wrapper.expanded .main-menu-text-wrapper {  background-color: rgba(0,0,0,0.1); }
+.unidocu_new .page_title span{ font-size: 22px; margin-left: 8px; font-family: "SCD-5", sans-serif; }
+.unidocu_new .page_title i.fas.fa-circle::before { display: inline-block; width: 7px; height: 7px; content: ''; border-radius: 50%; background-color: #219dcb; }
+
+.unidocu_new .unidocu-button {
+    margin-left: 3px;
+    text-align: center;
+    vertical-align: middle;
+    touch-action: manipulation;
+    border: 1px solid #222;
+    padding: 0 10px;
+    line-height: 27px;
+    font-size: 13px;
+    background-color: #fff;
+    height: 30px;
+}
+
+#unipost-unidocu.unidocu_new .unidocu-button.blue {
+    background-color: #219dcb;
+}
+.unidocu_new #wrap #sub_content #menu-path {
+    color: #219dcb;
+}
+.unidocu_new #wrap #sub_content #unidocu-main-menu .main-menu-anchor .leaf-menu-dropdown-list:last-child {
+    border-color: #219dcb;
+}
+
+.unidocu_new .unidocu-panel header {
+    background-color: rgba(33,157,203,0.12);
+}
+
+.unidocu_new .unidocu-panel header .unidocu-panel-ctrls .unidocu-badge {
+    font-weight: bold;
+    padding: 0 10px;
+    border-radius: 15px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    height: 24px;
+    line-height: 23px;
+}
+
+.unidocu_new #top-area {
+    height: 50px;
+    text-align: right;
+    border-bottom: 1px solid #c5c5c6;
+    background-color: #ffffff;
+    position: fixed;
+    top:0;
+    width: 100%;
+    min-width: 1250px;
+    z-index: 3;
+}
+.unidocu_new #top-area .logoff {
+    font-weight: normal;
+    color: #222;
+}
+.unidocu_new #wrap #sub_content #unidocu-main-menu .main-menu-anchor { display: inline-block; text-align: center; height: 55px; border-left: 1px solid rgba(255,255,255,0.25); }
+.unidocu_new #wrap #sub_content #unidocu-main-menu .main-menu-anchor i:before { content: '\e8ad'; position: relative; color: #fff; font-family: "unifont", sans-serif; font-size: 45px; height:55px; line-height: 55px;margin-left: -10px; opacity: 0.6; }
+#wrap #sub_content #unidocu-main-menu .main-menu-anchor .middle-menu-dropdown-wrapper {
+    position: absolute;
+    display: none;
+    background-color: #ffffff;
+    color: #222;
+    border: 1px solid #219dcb;
+    top: 54px;
+    z-index: 1;
+    text-align: left;
+    text-indent: 20px;
+}
+.unidocu_new #wrap #sub_content #unidocu-main-menu .main-menu-anchor .middle-menu-dropdown-list { font-size: 14px; height: 45px; line-height:45px; color: #999; box-sizing: border-box; }
+.unidocu_new #wrap #sub_content #unidocu-main-menu .main-menu-anchor .middle-menu-dropdown-list:hover {
+    color: #222;
+    border: 1px solid #219dcb;
+    border-right: none;
+    border-left: none;
+    border-top: 1px solid #219dcb !important;
+}
+#unipost-unidocu.unidocu_new  #wrap #sub_content #unidocu-main-menu .main-menu-anchor .leaf-menu-dropdown-list {
+    height: 45px;
+    line-height:45px;
+    font-size: 13px;
+    text-indent: 35px;
+    border-left: 1px solid #219dcb;
+    border-right: 1px solid #219dcb;
+    box-sizing: border-box;
+    position: relative;
+}
+#unipost-unidocu.unidocu_new  #wrap #sub_content #unidocu-main-menu .main-menu-anchor .leaf-menu-dropdown-list:first-child { border-top: 1px solid #219dcb; border-left: 1px solid transparent; }
+#unipost-unidocu.unidocu_new  #wrap #sub_content #unidocu-main-menu .main-menu-anchor:last-child .leaf-menu-dropdown-list:first-child { border-left: 1px solid #219dcb; border-right: 1px solid transparent; }
+#unipost-unidocu.unidocu_new  #wrap #sub_content #unidocu-main-menu .main-menu-anchor .leaf-menu-dropdown-list:last-child { border-bottom: 1px solid #219dcb; }
+#unipost-unidocu.unidocu_new  #wrap #sub_content #unidocu-main-menu .main-menu-anchor .leaf-menu-dropdown-list:hover { color: #219dcb; }
+#unipost-unidocu.unidocu_new  #wrap #sub_content #unidocu-main-menu .main-menu-anchor .leaf-menu-dropdown-list:hover:before {
+    content: '';
+    height: 4px;
+    width: 4px;
+    background-color: #219dcb;
+    border-radius: 50%;
+    display: inline-block;
+    position: absolute;
+    top: calc(50% - 2px);
+    left: 25px;
+}
+#unipost-unidocu.unidocu_new #wrap #sub_content #unidocu-main-menu .main-menu-anchor .middle-menu-dropdown-list + .middle-menu-dropdown-list { margin-top: -1px; border-top: 1px solid rgba(33,157,203,0.25); }
+#unipost-unidocu.unidocu_new #wrap #sub_content #menu-path {
+    font-size: 15px;
+    text-align: right;
+    color: #777;
+    padding: 6px 50px 6px 0;
+    float: right;
+    width: 100%;
+    background-color: #ededf0;
+}
+#unipost-unidocu.unidocu_new #wrap #sub_content #menu-path span { font-size: 13px;margin-left: 2px; }
+
+#unipost-unidocu.unidocu_new #theme_user_info { display: inline-block; float: left; margin-left: 100px; }
+#unipost-unidocu.unidocu_new #layout-wrapper i.selected { color: #222 !important; }
+
+#unipost-unidocu.unidocu_new .login-box-in::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 100%;
+    background-color: #219dcb;
+}
+
+#unipost-unidocu.unidocu_new .login-box .login-title h2 { font-size: 30px; color: #219dcb; }
+
+#unipost-unidocu.unidocu_new.layout-left .main-menu-wrapper .main-menu-text-wrapper:hover,
+#unipost-unidocu.unidocu_new.layout-left .main-menu-wrapper.expanded .main-menu-text-wrapper {  background-color: rgba(0,0,0,0.1); }
+
+#unipost-unidocu.unidocu_new.layout-left #sider,
+#unipost-unidocu.unidocu_new.layout-left #left_fold,
+#unipost-unidocu.unidocu_new.layout-left .main-menu-wrapper .main-menu-text-wrapper,
+#unipost-unidocu.unidocu_new .ui-datepicker .ui-widget-header,
+#unipost-unidocu.unidocu_new .ui-datepicker .ui-icon-background,
+#unipost-unidocu.unidocu_new .ui-datepicker .ui-state-active .ui-icon-background,
+#unipost-unidocu.unidocu_new .ui-datepicker select.ui-datepicker-month,
+#unipost-unidocu.unidocu_new body .ui-datepicker select.ui-datepicker-year,
+#unipost-unidocu.unidocu_new .ui-datepicker-year,
+#unipost-unidocu.unidocu_new #wrap #sub_content #unidocu-main-menu,
+#unipost-unidocu.unidocu_new #wrap #sub_content #unidocu-main-menu .main-menu-anchor:hover,
+#unipost-unidocu.unidocu_new .unidocu-button.blue {
+    background-color: #219dcb;
+}
+
+#unipost-unidocu.unidocu_new.layout-left .middle-menu-wrapper,
+#unipost-unidocu.unidocu_new.layout-left .middle-menu-text-wrapper .ico-uni-doc,
+#unipost-unidocu.unidocu_new .page_title i.fas.fa-circle,
+#unipost-unidocu.unidocu_new .ui-datepicker .ui-state-active,
+#unipost-unidocu.unidocu_new .ui-datepicker .ui-widget-content .ui-state-active,
+#unipost-unidocu.unidocu_new .ui-datepicker .ui-widget-header .ui-state-active,
+#unipost-unidocu.unidocu_new .ui-datepicker a.ui-button:active,
+#unipost-unidocu.unidocu_new .ui-datepicker .ui-button:active,
+#unipost-unidocu.unidocu_new .ui-datepicker .ui-button.ui-state-active:hover,
+#unipost-unidocu.unidocu_new .ui-datepicker .ui-state-active a,
+#unipost-unidocu.unidocu_new .ui-datepicker .ui-state-active a:link,
+#unipost-unidocu.unidocu_new .ui-datepicker .ui-state-active a:visited,
+#unipost-unidocu.unidocu_new #top-area span,
+#unipost-unidocu.unidocu_new #layout-wrapper i.selected,
+#unipost-unidocu.unidocu_new  #wrap #sub_content #menu-path {
+    color: #219dcb;
+}
+
+#unipost-unidocu.unidocu_new .ui-dialog,
+#unipost-unidocu.unidocu_new .ui-datepicker.ui-widget.ui-widget-content,
+#unipost-unidocu.unidocu_new .ui-datepicker .ui-widget-header,
+#unipost-unidocu.unidocu_new .ui-datepicker select.ui-datepicker-month,
+#unipost-unidocu.unidocu_new body .ui-datepicker select.ui-datepicker-year,
+#unipost-unidocu.unidocu_new .ui-datepicker-year,
+#unipost-unidocu.unidocu_new #wrap #sub_content #unidocu-main-menu .main-menu-anchor .middle-menu-dropdown-list:hover,
+#unipost-unidocu.unidocu_new #wrap #sub_content #unidocu-main-menu .main-menu-anchor .leaf-menu-dropdown-list,
+#unipost-unidocu.unidocu_new #wrap #sub_content #unidocu-main-menu .main-menu-anchor .leaf-menu-dropdown-list:first-child,
+#unipost-unidocu.unidocu_new #wrap #sub_content #unidocu-main-menu .main-menu-anchor:last-child .leaf-menu-dropdown-list:first-child,
+#unipost-unidocu.unidocu_new #wrap #sub_content #unidocu-main-menu .main-menu-anchor .leaf-menu-dropdown-list:last-child {
+    border-color: #219dcb;
+}

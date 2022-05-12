@@ -1,0 +1,25 @@
+<style>
+    #input-wrapper span { display: inline-block; line-height: 24px; }
+    #input-wrapper .input-label { width: 150px; background-color: #CCC; text-align: center; height: 24px; }
+    #input-wrapper .form-data { margin-left: 2px; }
+    #input-wrapper .form-data input { width: 450px; }
+    #input-wrapper .form-data select { height: 24px; }
+    #input-wrapper div { margin-top: 2px; }
+</style>
+<div id="input-wrapper">
+    <div><span class="input-label">{{{기능모듈 이름}}}</span><span class="form-data" id="FUNCNAME_SELECT"></span></div>
+    <div style="margin-top: 10px;"></div>
+    <div><span class="input-label">FUNCTION NAME</span><span class="form-data"><input type="text" name="FUNCNAME_R" id="FUNCNAME_R"/></span></div>
+    <div><span class="input-label">FUNCTION DESCRIPTION</span><span class="form-data"><input type="text" name="STEXT" id="STEXT"/></span></div>
+    <div><span class="input-label">{{{기능그룹}}}</span><span class="form-data"><input type="text" name="AREA" id="AREA"/></span></div>
+    <div><span class="input-label">COMMENT</span></div>
+    <div><textarea name="IS_USE_COMMENT" id="IS_USE_COMMENT" style="margin-left: 150px; width: 453px; height: 100px;"></textarea></div>
+</div>
+
+<div class="btn_area">
+    <button class="unidocu-button left" id="excelExport">{{{Excel 저장}}}</button>
+    <button class="unidocu-button left" id="toggleForm">{{{toggleForm}}}</button>
+    <button class="unidocu-button left" id="doSave">{{{저장}}}</button>
+    <button class="unidocu-button blue" id="doQuery">{{{조회}}}</button>
+</div>
+<div id="unidocu-grid" class="unidocu-grid"></div>

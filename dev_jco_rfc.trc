@@ -1,0 +1,192 @@
+
+**** Error file opened at 20210915 084554 GMT+09:00 Rel 3.0.10 (2013-08-08) [720.440]
+Error:  >Wed Sep 15 08:45:54,518<    RfcException: [null]
+    message: Connect to SAP gateway failed
+Connection parameters: TYPE=A DEST=TEST_DESTINATION_NAME ASHOST=211.48.245.138 SYSNR=00 PCS=1
+
+LOCATION    CPIC (TCP/IP) on local host with Unicode
+ERROR       connection to partner '211.48.245.138:3300' broken
+TIME        Wed Sep 15 08:45:54 2021
+RELEASE     720
+COMPONENT   NI (network interface)
+VERSION     40
+RC          -6
+MODULE      gwxx.c
+LINE        646
+DETAIL      NiIRead: P=211.48.245.138:3300; L=192.168.218.113:52089
+SYSTEM CALL GwRead
+ERRNO       10054
+ERRNO TEXT  WSAECONNRESET: Connection reset by peer
+COUNTER     4
+
+    Return code: RFC_FAILURE(1)
+    error group: 102
+    key: RFC_ERROR_COMMUNICATION
+
+Error:  >Wed Sep 15 08:46:24,544<    RfcException: [null]
+    message: Connect to SAP gateway failed
+Connection parameters: TYPE=A DEST=TEST_DESTINATION_NAME ASHOST=211.48.245.138 SYSNR=00 PCS=1
+
+LOCATION    CPIC (TCP/IP) on local host with Unicode
+ERROR       connection to partner '211.48.245.138:3300' broken
+TIME        Wed Sep 15 08:46:24 2021
+RELEASE     720
+COMPONENT   NI (network interface)
+VERSION     40
+RC          -6
+MODULE      gwxx.c
+LINE        646
+DETAIL      NiIRead: P=211.48.245.138:3300; L=192.168.218.113:63852
+SYSTEM CALL GwRead
+ERRNO       10054
+ERRNO TEXT  WSAECONNRESET: Connection reset by peer
+COUNTER     6
+
+    Return code: RFC_FAILURE(1)
+    error group: 102
+    key: RFC_ERROR_COMMUNICATION
+
+
+**** Error file opened at 20210915 084722 GMT+09:00 Rel 3.0.10 (2013-08-08) [720.440]
+Error:  >Wed Sep 15 08:47:22,113<    RfcException: [null]
+    message: Connect to SAP gateway failed
+Connection parameters: TYPE=A DEST=TEST_DESTINATION_NAME ASHOST=211.48.245.138 SYSNR=00 PCS=1
+
+LOCATION    CPIC (TCP/IP) on local host with Unicode
+ERROR       connection to partner '211.48.245.138:3300' broken
+TIME        Wed Sep 15 08:47:22 2021
+RELEASE     720
+COMPONENT   NI (network interface)
+VERSION     40
+RC          -6
+MODULE      gwxx.c
+LINE        646
+DETAIL      NiIRead: P=211.48.245.138:3300; L=192.168.218.113:51179
+SYSTEM CALL GwRead
+ERRNO       10054
+ERRNO TEXT  WSAECONNRESET: Connection reset by peer
+COUNTER     4
+
+    Return code: RFC_FAILURE(1)
+    error group: 102
+    key: RFC_ERROR_COMMUNICATION
+
+Error:  >Wed Sep 15 08:47:52,121<    RfcException: [null]
+    message: Connect to SAP gateway failed
+Connection parameters: TYPE=A DEST=TEST_DESTINATION_NAME ASHOST=211.48.245.138 SYSNR=00 PCS=1
+
+LOCATION    CPIC (TCP/IP) on local host with Unicode
+ERROR       connection to partner '211.48.245.138:3300' broken
+TIME        Wed Sep 15 08:47:52 2021
+RELEASE     720
+COMPONENT   NI (network interface)
+VERSION     40
+RC          -6
+MODULE      gwxx.c
+LINE        646
+DETAIL      NiIRead: P=211.48.245.138:3300; L=192.168.218.113:58038
+SYSTEM CALL GwRead
+ERRNO       10054
+ERRNO TEXT  WSAECONNRESET: Connection reset by peer
+COUNTER     6
+
+    Return code: RFC_FAILURE(1)
+    error group: 102
+    key: RFC_ERROR_COMMUNICATION
+
+
+**** Error file opened at 20210915 084925 GMT+09:00 Rel 3.0.10 (2013-08-08) [720.440]
+Error:  >Wed Sep 15 08:49:25,845<    RfcException: [null]
+    message: Connect to SAP gateway failed
+Connection parameters: TYPE=A DEST=TEST_DESTINATION_NAME ASHOST=211.48.245.138 SYSNR=00 PCS=1
+
+LOCATION    CPIC (TCP/IP) on local host with Unicode
+ERROR       connection to partner '211.48.245.138:3300' broken
+TIME        Wed Sep 15 08:49:25 2021
+RELEASE     720
+COMPONENT   NI (network interface)
+VERSION     40
+RC          -6
+MODULE      gwxx.c
+LINE        646
+DETAIL      NiIRead: P=211.48.245.138:3300; L=192.168.218.113:58054
+SYSTEM CALL GwRead
+ERRNO       10054
+ERRNO TEXT  WSAECONNRESET: Connection reset by peer
+COUNTER     4
+
+    Return code: RFC_FAILURE(1)
+    error group: 102
+    key: RFC_ERROR_COMMUNICATION
+
+Error:  >Wed Sep 15 08:49:55,874<    RfcException: [null]
+    message: Connect to SAP gateway failed
+Connection parameters: TYPE=A DEST=TEST_DESTINATION_NAME ASHOST=211.48.245.138 SYSNR=00 PCS=1
+
+LOCATION    CPIC (TCP/IP) on local host with Unicode
+ERROR       connection to partner '211.48.245.138:3300' broken
+TIME        Wed Sep 15 08:49:55 2021
+RELEASE     720
+COMPONENT   NI (network interface)
+VERSION     40
+RC          -6
+MODULE      gwxx.c
+LINE        646
+DETAIL      NiIRead: P=211.48.245.138:3300; L=192.168.218.113:58058
+SYSTEM CALL GwRead
+ERRNO       10054
+ERRNO TEXT  WSAECONNRESET: Connection reset by peer
+COUNTER     6
+
+    Return code: RFC_FAILURE(1)
+    error group: 102
+    key: RFC_ERROR_COMMUNICATION
+
+
+**** Error file opened at 20210915 085544 GMT+09:00 Rel 3.0.10 (2013-08-08) [720.440]
+Error:  >Wed Sep 15 08:55:44,041<    RfcException: [null]
+    message: Connect to SAP gateway failed
+Connection parameters: TYPE=A DEST=TEST_DESTINATION_NAME ASHOST=211.48.245.138 SYSNR=00 PCS=1
+
+LOCATION    CPIC (TCP/IP) on local host with Unicode
+ERROR       connection to partner '211.48.245.138:3300' broken
+TIME        Wed Sep 15 08:55:44 2021
+RELEASE     720
+COMPONENT   NI (network interface)
+VERSION     40
+RC          -6
+MODULE      gwxx.c
+LINE        646
+DETAIL      NiIRead: P=211.48.245.138:3300; L=192.168.218.113:63001
+SYSTEM CALL GwRead
+ERRNO       10054
+ERRNO TEXT  WSAECONNRESET: Connection reset by peer
+COUNTER     4
+
+    Return code: RFC_FAILURE(1)
+    error group: 102
+    key: RFC_ERROR_COMMUNICATION
+
+Error:  >Wed Sep 15 08:56:14,064<    RfcException: [null]
+    message: Connect to SAP gateway failed
+Connection parameters: TYPE=A DEST=TEST_DESTINATION_NAME ASHOST=211.48.245.138 SYSNR=00 PCS=1
+
+LOCATION    CPIC (TCP/IP) on local host with Unicode
+ERROR       connection to partner '211.48.245.138:3300' broken
+TIME        Wed Sep 15 08:56:14 2021
+RELEASE     720
+COMPONENT   NI (network interface)
+VERSION     40
+RC          -6
+MODULE      gwxx.c
+LINE        646
+DETAIL      NiIRead: P=211.48.245.138:3300; L=192.168.218.113:63007
+SYSTEM CALL GwRead
+ERRNO       10054
+ERRNO TEXT  WSAECONNRESET: Connection reset by peer
+COUNTER     6
+
+    Return code: RFC_FAILURE(1)
+    error group: 102
+    key: RFC_ERROR_COMMUNICATION
+

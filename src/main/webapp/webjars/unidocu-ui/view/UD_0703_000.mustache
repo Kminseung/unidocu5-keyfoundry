@@ -1,0 +1,308 @@
+{{! stache!unidocu-ui/view/UD_0703_000 }}
+<!--suppress CssUnusedSymbol -->
+<style>
+    .count-box-wrapper:nth-child(1) .count-box i:before {
+        content: '\e800';
+        color: #219dcb;
+    }
+
+    .count-box-wrapper:nth-child(2) .count-box i:before {
+        content: '\e870';
+        color: #f05333;
+    }
+
+    .count-box-wrapper:nth-child(2) .count-box i:after {
+        background-color: rgba(240,38,51,0.15);
+    }
+
+    .count-box-wrapper:nth-child(3) .count-box i:before {
+        content: '\e805';
+        color: #9cb227;
+    }
+
+    .count-box-wrapper:nth-child(3) .count-box i:after {
+        background-color: rgba(156,178,39,0.15);
+    }
+
+
+    .count-box {
+        background: #ffffff;
+        margin-right: 20px;
+        height: 330px;
+        min-width: 220px;
+    }
+
+    .count-box tr:hover {
+        background-color: #4ea3e6;
+    }
+
+    .count-box .td-title,
+    .count-box .count {
+        font-size: 13px;
+        line-height: 40px;
+        cursor: pointer;
+    }
+
+    .count-box .count-line,
+    .count-box .dashboard-title {
+        margin: 0 30px;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .count-box .dashboard-title {
+        height: 46px;
+        font-size: 18px;
+        color: #000000;
+        text-align: center;
+        border-color: #999;
+    }
+
+    .count-box .count-line:last-child {
+        border-bottom: none;
+    }
+
+    .count-box .count {
+        text-align: right;
+        color: red;
+    }
+
+    .count-box i {
+        border-radius: 50%;
+        background-color: #fff;
+        height: 50px;
+        width: 50px;
+        display: block;
+        margin-left: 50%;
+        position: relative;
+        left: -25px;
+        top: -25px;
+    }
+
+    .count-box i:after {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: inline-block;
+        content: '';
+        width: 50px;
+        height: 50px;
+        border-radius: 50px;
+        background-color: rgba(0, 45, 115, 0.12);
+    }
+
+    .count-box-wrapper {
+        padding: 10px 10px 10px 0;
+    }
+
+    .section-a {
+        margin-left: 30px;
+    }
+
+    .section-a tr:last-child:after {
+        content: '';
+        height: 330px;
+        border-right: 1px solid #ddd;
+        display: inline-block;
+        margin-top: 10px;
+    }
+
+    .tax-list {
+        margin-left: 20px;
+        list-style: none;
+    }
+
+    .tax-list li {
+        cursor: pointer;
+        margin-bottom: 20px;
+        min-width: 200px;
+        margin-left: 30px;
+    }
+
+    .tax-list li i {
+        border-radius: 50%;
+        background-color: #fff;
+        height: 50px;
+        width: 50px;
+        display: inline-block;
+    }
+
+    .tax-list li span {
+        font-size: 14px;
+        margin-left: 10px;
+        color: #000000;
+        vertical-align: top;
+        height: 50px;
+        line-height: 50px;
+    }
+
+    .count-box i:before,
+    .tax-list li i:before {
+        position: relative;
+        color: #000000;
+        font-family: "unifont", sans-serif;
+        font-size: 30px;
+        left: 11px;
+        top: 10px;
+    }
+
+
+
+    .section-b {
+        margin: 30px 30px 0;
+        box-sizing: border-box;
+        background-color: rgba(255, 255, 255, 0.5);
+        padding: 0;
+    }
+
+    .section-b td {
+        width: 50%;
+    }
+
+    .section-b-item {
+        height: 155px;
+        padding: 25px 30px;
+    }
+
+    .section-b-item.board-box {
+        margin-right: 3px;
+    }
+
+    .section-b-item .dashboard-title {
+        font-size: 18px;
+        display: inline-block;
+    }
+
+    .section-b-item .count {
+        color: red;
+        font-size: 16px;
+        margin-left: 5px;
+    }
+
+    .board-list {
+        padding: 12px 10px;
+        margin-top: 15px;
+    }
+
+    .board-list tr {
+        height: 24px;
+        cursor: pointer;
+    }
+
+    .board-list tr:hover {
+        background-color: rgba(33,157,203,0.04);
+    }
+
+    .board-list td {
+        min-width: 20px;
+        text-align: center;
+    }
+
+    .board-list .title {
+        text-align: left;
+        font-size: 14px;
+        color: #555
+    }
+    .board-list .title span{
+        font-size: 14px;
+    }
+
+    .board-list .date {
+        max-width: 80px;
+        min-width: 80px;
+        width: 80px;
+        text-align: right;
+        font-size: 14px;
+        color: #999
+    }
+
+    .board-list .NGB .title,
+    .board-list .NGB .date {
+        color: #219dcb;
+    }
+
+    .more-button {
+        float: right;
+        width: 100px !important;
+    }
+
+    #unipost-unidocu #notice-wrapper.btn_area,
+    #unipost-unidocu #faq-wrapper.btn_area {
+        padding: 0
+    }
+
+    #unipost-unidocu #faq-wrapper.btn_area button,
+    #unipost-unidocu #notice-wrapper.btn_area button {
+        height: 23px;
+        line-height: 23px;
+        padding: 0 5px;
+        color: #99999B;
+        border-color: #99999B;
+    }
+
+    .section-b-item.board-box:before {
+        content: '';
+        display: inline-block;
+        height: 155px;
+        position: absolute;
+        border-right: 1px solid #dddddd;
+        right: 50%;
+    }
+
+    .link-icon {
+        height: 323px;
+        width: 25%;
+        vertical-align: top;
+        padding-top: 10px;
+    }
+
+    .count-box,
+    .section-b .section-b-inner {
+        box-shadow: 0 10px 10px rgba(0, 23, 59, .02), 0 21px 20px rgba(0, 23, 59, .03) !important;
+    }
+
+    body.UD_0703_000 {
+        background-image: url({{contextPath}}/images/bg-dashboard.jpg);
+        background-repeat: no-repeat;
+        background-position: bottom right;
+    }
+</style>
+
+
+<div class="main-wrap">
+    <table style="margin-top: 40px;">
+        <tr>
+            <td style="vertical-align: top;"> <table class="section-a"> <tr></tr> </table> </td>
+            <td class="link-icon" style="">
+                <div>
+                    <ul class="tax-list">
+                        <li data-url="http://unidocu.unipost.co.kr:16080"><i class="ico-uni-fin"></i><span>{{{M빌 전자계약 서비스}}}</span></li>
+                        <li data-url="https://www.hometax.go.kr/"><i class="ico-uni-calc-check"></i><span>{{{홈택스}}}</span></li>
+                        <li data-url="https://www.wetax.go.kr"><i class="ico-uni-coin1"></i><span>{{{지방세위택스}}}</span></li>
+                        <li data-url="http://www.kostat.go.kr"><i class="ico-uni-report"></i><span>{{{통계청}}}</span></li>
+                    </ul>
+                </div>
+            </td>
+        </tr>
+    </table>
+
+    <div class="section-b" style="display: none;">
+        <table class="section-b-inner">
+            <tr>
+                <td>
+                    <div class="section-b-item board-box">
+                        <div class="btn_area uni-form-table-button-area more-button" id="notice-wrapper" data-sub-group="UD_0703_000"></div>
+                        <h3 class="dashboard-title bottom">{{{공지사항}}}</h3><span class="count"></span>
+                        <table class="board-list notice"></table>
+                    </div>
+                </td>
+                <td>
+                    <div class="section-b-item board-box">
+                        <div class="btn_area uni-form-table-button-area more-button" id="faq-wrapper" data-sub-group="UD_0703_000"></div>
+                        <h3 class="dashboard-title bottom">FAQ</h3><span class="count"></span>
+                        <table class="board-list faq"></table>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>

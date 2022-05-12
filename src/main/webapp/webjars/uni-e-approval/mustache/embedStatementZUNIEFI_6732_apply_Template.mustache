@@ -1,0 +1,87 @@
+{{! stache!uni-e-approval/mustache/embedStatementZUNIEFI_6732_apply_Template }}
+<div class="unidocu-approval-contents">
+    <style>
+        .unidocu-approval-contents {
+            width: 82%;
+            margin: auto;
+            padding-bottom: 20px;
+            font-size: 12px;
+        }
+        .unidocu-approval-contents h3 {
+            margin-top: 25px;
+        }
+        .unidocu-approval-contents table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        .unidocu-approval-contents table td,
+        .unidocu-approval-contents table th {
+            font-size: 12px;
+            border: 1px solid #ccc;
+            word-break: break-all;
+            text-align: center;
+            height: 20px;
+            background-color: #ffffff;
+            padding: 3px;
+        }
+        .unidocu-approval-contents table th {
+            background-color: #eee;
+        }
+    </style>
+
+    <table id="header" style="margin-top: 10px; table-layout: fixed; word-wrap: break-word">
+        <tr>
+            <th style="width:10%; text-align: center;">{{{제목}}}</th>
+            <td style="text-align: left;" data-field-description="DOC_TYPE TITLE">[{{os_data.DOC_TYPE_TXT}}] {{os_data.TITLE}}</td>
+        </tr>
+    </table>
+
+    <table id="header" style="margin-top: 10px; table-layout: fixed; word-wrap: break-word">
+        <tr>
+            <th style="width:10%; text-align: center;">{{{신청번호}}}</th>
+            <td style="text-align: left;" data-field-description="REQTXT">{{os_data.REQTXT}}</td>
+            <th style="width:10%; text-align: center;">{{{출장목적}}}</th>
+            <td style="text-align: left;" data-field-description="PURPOSE_TXT">{{os_data.PURPOSE_TXT}}</td>
+        </tr>
+        <tr>
+            <th style="width:10%; text-align: center;">{{{출장자}}}</th>
+            <td style="text-align: left;" data-field-description="PERNR_TXT POS_KEY_TXT">{{os_data.PERNR_TXT}} {{os_data.POS_KEY_TXT}}</td>
+            <th style="width:10%; text-align: center;">{{{부서}}}</th>
+            <td style="text-align: left;" data-field-description="KOSTL_TXT">{{os_data.KOSTL_TXT}}</td>
+        </tr>
+    </table>
+
+    <h3>■ 출장자 / 합계금액</h3>
+    <table id="contents" style="margin-top: 10px;">
+        <tr>
+            <th style="text-align: center;">{{{출장자}}}</th>
+            <th style="text-align: center;">{{{직위}}}</th>
+            <th style="text-align: center;">{{{지역}}}</th>
+            <th style="text-align: center;">{{{시작일자}}}</th>
+            <th style="text-align: center;">{{{종료일자}}}</th>
+            <th style="text-align: center;">{{{박수}}}</th>
+            <th style="text-align: center;">{{{일수}}}</th>
+            <th style="text-align: center;">{{{숙박비}}}</th>
+            <th style="text-align: center;">{{{일비}}}</th>
+            <th style="text-align: center;">{{{기타}}}</th>
+            <th style="text-align: center;">{{{교통비}}}</th>
+            <th style="text-align: center;">{{{합계}}}</th>
+        </tr>
+        {{#ot_head}}
+        <tr>
+            <td style="text-align: center;" data-field-description="PERNR_TXT">{{PERNR_TXT}}</td>
+            <td style="text-align: center;" data-field-description="POS_KEY_TXT">{{POS_KEY_TXT}}</td>
+            <td style="text-align: center;" data-field-description="CITY_TXT">{{CITY_TXT}}</td>
+            <td style="text-align: center;" data-field-description="FDATE">{{FDATE}}</td>
+            <td style="text-align: center;" data-field-description="TDATE">{{TDATE}}</td>
+            <td style="text-align: center;" data-field-description="TR_NIGHT">{{TR_NIGHT}}</td>
+            <td style="text-align: center;" data-field-description="TR_DAY">{{TR_DAY}}</td>
+            <td style="text-align: right;" data-field-description="ROOM_EXP_TXT">{{ROOM_EXP_TXT}}</td>
+            <td style="text-align: right;" data-field-description="DAY_EXP_TXT">{{DAY_EXP_TXT}}</td>
+            <td style="text-align: right;" data-field-description="ETC_EXP_TXT">{{ETC_EXP_TXT}}</td>
+            <td style="text-align: right;" data-field-description="TRIP_EXP_TXT">{{TRAN_EXP_TXT}}</td>
+            <td style="text-align: right;" data-field-description="SUM_EXP_TXT">{{SUM_EXP_TXT}}</td>
+        </tr>
+        {{/ot_head}}
+    </table>
+</div>

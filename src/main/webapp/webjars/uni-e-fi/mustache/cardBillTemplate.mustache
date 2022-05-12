@@ -1,0 +1,207 @@
+{{! stache!uni-e-fi/mustache/cardBillTemplate }}
+<!--suppress CssUnusedSymbol -->
+<style>
+    .card {
+        width: 400px;
+        padding-bottom: 5px;
+        background-color: #FFFFFF;
+        margin: auto;
+    }
+
+    .cardBill {
+        padding: 0 40px 0 40px;
+    }
+
+    .card td {
+        max-width: 164px;
+    }
+
+    .card td.ellipsis {
+        max-width: 81px;
+        color: #828282;
+    }
+
+    .card td.ellipsisPrice {
+        max-width: 81px;
+        color: black;
+    }
+
+    .card td.contents {
+        max-width: 81px;
+        color: black;
+    }
+
+    .card table td {
+        text-align: left;
+        font-size: 11px;
+        height: 21px;
+    }
+
+    .card table td.total {
+        text-align: right;
+        font-weight: bold;
+        color: #008F7E;
+        height: 21px;
+        font-size: 16px;
+    }
+
+    .card table td.price {
+        text-align: right;
+        font-weight: bold;
+        max-width: 81px;
+        color: black;
+    }
+
+    .card .cardtit {
+        text-align: center;
+        font-weight: bold;
+        font-size: 16px;
+        padding: 15px 0 10px 0;
+        border-bottom: 2px solid #828282;
+    }
+
+    .card .card-table1,
+    .card .card-table2 {
+        border-bottom: 1px solid lightgrey;
+        margin-top: 10px;
+    }
+
+    .card .card-table3 {
+        border-bottom: 2px dashed lightgrey;
+        margin-top: 10px;
+    }
+
+    .card .card-table1 td,
+    .card .card-table2 td,
+    .card .card-table3 td {
+        font-weight: bold;
+        height: 25px;
+    }
+
+    .card .card-table2 td {
+        font-size: 13px;
+    }
+
+    .card .signin-wrapper {
+        display: inline;
+        top: 200px;
+        left: 150px;
+        position: absolute;
+        z-index: 999999;
+    }
+
+    .card .signin-wrapper .column {
+        width: 187px;
+        height: 149px;
+        top: 20px;
+        right: 37px;
+        overflow: hidden;
+        position: relative;
+        z-index: 999999;
+        background: url({{{contextPath}}}/webjars/uni-e-fi/module/images/card/card_cancel.gif) 0 0;
+    }
+
+    .card #buttonBar {
+        padding: 10px 0 10px 0;
+    }
+
+    .card tr:last-child td {
+        padding-bottom: 10px;
+    }
+
+    .card .PrintButton {
+        margin: auto;
+        display: block;
+        height: 30px;
+        width: 55px;
+        border: 1px solid #999999;
+        padding: 0 10px;
+        border-radius: 3px;
+        left: 50%;
+        background-color: #FFFFFF;
+    }
+
+    /* @formatter:on */
+</style>
+<div class="card">
+    <div class="cardBill">
+        <div class="cardtit">{{{신용카드 매출전표}}}</div>
+        <table class="card-table1" style="width: 100%;">
+            <tr>
+                <td class="ellipsis" style="width: 40%" title="{{{카드종류}}}">{{{카드종류}}}</td>
+                <td class="contents" style="width: 60%">{{TEXT20}}</td>
+            </tr>
+            <tr>
+                <td class="ellipsis" title="{{{카드번호}}}">{{{카드번호}}}</td>
+                <td class="contents">{{CARDNO_TXT}}</td>
+            </tr>
+            <tr>
+                <td class="ellipsis" title="{{{유효기간}}}">{{{유효기간}}}</td>
+                <td class="contents">****/**</td>
+            </tr>
+            <tr>
+                <td class="ellipsis" title="{{{거래유형}}}">{{{거래유형}}}</td>
+                <td class="contents">{{APPR_TYPE_TXT}}</td>
+            </tr>
+            <tr>
+                <td class="ellipsis" title="{{{거래일시}}}">{{{거래일시}}}</td>
+                <td class="contents">{{APPR_DATE}} {{APPR_TIME}}</td>
+            </tr>
+
+            <tr>
+                <td class="ellipsis" title="{{{할부}}}">{{{할부}}}</td>
+                <td class="contents" title="{{{일시불}}}">{{{일시불}}}</td>
+            </tr>
+            <tr>
+                <td class="ellipsis" title="{{{승인번호}}}">{{{승인번호}}}</td>
+                <td class="contents">{{APPR_NO}}</td>
+            </tr>
+        </table>
+
+        <table class="card-table2">
+            <tr>
+                <td class="ellipsis-Price" style="width: 40%" title="{{{합 계}}}">{{{합 계}}}</td>
+                <td class="total" style="width: 60%">{{TOTAL}}</td>
+            </tr>
+            <tr>
+                <td class="ellipsisPrice" title="{{{공급가액}}}">{{{공급가액}}}</td>
+                <td class="price">{{AMOUNT}}</td>
+            </tr>
+            <tr>
+                <td class="ellipsisPrice" title="{{{부가세}}}">{{{부가세}}}</td>
+                <td class="price">{{TAX}}</td>
+            </tr>
+            <tr>
+                <td class="ellipsisPrice" title="{{{봉사료}}}">{{{봉사료}}}</td>
+                <td class="price">{{TIPS}}</td>
+            </tr>
+        </table>
+
+        <table class="card-table3">
+            <tr>
+                <td class="ellipsis" style="width: 40%" title="{{{업종}}}">{{{업종}}}</td>
+                <td class="contents" style="width: 60%">{{MCC_NAME}}</td>
+            </tr>
+            <tr>
+                <td class="ellipsis" title="{{{가맹점명}}}">{{{가맹점명}}}</td>
+                <td class="contents">{{MERCH_NAME}}</td>
+            </tr>
+            <tr>
+                <td class="ellipsis" title="{{{사업자등록번호}}}">{{{사업자등록번호}}}</td>
+                <td class="contents">{{MERCH_BIZ_NO}}</td>
+            </tr>
+            <tr>
+                <td class="ellipsis" title="{{{주소}}}">{{{주소}}}</td>
+                <td class="contents">{{MERCH_ADDR1}}</td>
+            </tr>
+        </table>
+
+        <div class="signin-wrapper">
+            <!-- 취소이미지 레이어 시작 -->
+            <div class="{{APPR_TYPE_CLASS}}"></div>
+        </div>
+        <div id="buttonBar">
+            <input type="button" value="{{{인쇄}}}" class="PrintButton" id="print"/>
+        </div>
+    </div>
+</div>

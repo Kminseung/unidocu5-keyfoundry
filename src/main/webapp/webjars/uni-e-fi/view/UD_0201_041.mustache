@@ -1,0 +1,34 @@
+{{! stache!uni-e-fi/view/UD_0201_041 }}
+<style>
+    #statement-header, #search-grid {
+        margin-bottom: 30px;
+    }
+    #unidocu-grid, #unidocu-grid2 {
+        height: 300px;
+    }
+    #amount-wrapper {background-color: #ffffff}
+    #amount-display {display: inline-block; vertical-align: bottom;}
+    #amount-display td { width: 100px !important; min-width: 100px !important; }
+    #amount-display input { color: green; font-weight: bold;}
+    .right-td {text-align: right;}
+
+    #amount-display th {border-left: 1px solid #ddd !important;}
+    #amount-display th,
+    #amount-display td { border-bottom: none !important; }
+</style>
+<div class="btn_area uni-form-table-button-area position-page_title" id="uni-buttons"></div>
+<div class="unidocu-form-table-wrapper" id="statement-header"></div>
+<table id="amount-wrapper">
+    <tr>
+        <td class="middle-td">
+            <div class="btn_area uni-form-table-button-area" id="uni-grid_top_buttons"></div>
+        </td>
+        <td class="right-td">
+            <div id="amount-display" class="unidocu-form-table-wrapper"></div>
+        </td>
+    </tr>
+</table>
+<div class="unidocu-form-table-wrapper" id="search-condition"></div>
+<div id="search-grid" class="unidocu-grid" data-sub-id="GRIDHEADER" style="height: 150px;"></div>
+<div id="unidocu-grid" class="unidocu-grid" data-sub-id="GRIDHEADER2"></div>
+<div id="unidocu-grid2" class="unidocu-grid" data-sub-id="GRIDHEADER3"></div>

@@ -1,0 +1,42 @@
+<style>
+    table{
+        border-collapse: collapse;
+        width: 400px;
+    }
+    th, td {
+        border: 1px solid black;
+    }
+
+    .ellipsis {
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        display: block;
+        word-wrap: normal;
+    }
+</style>
+<table id="header" style="table-layout: fixed;word-wrap: break-word">
+    <tbody>
+    <tr style="text-align: center">
+        <th style="width: 11%">전표번호</th>
+        <th style="width: 13%">전표유형</th>
+        <th style="width: 10%">전기일</th>
+        <th style="width: 10%">증빙일</th>
+        <th style="width: 35%">헤더텍스트</th>
+        <th style="width: 8%">전표통화</th>
+        <th style="width: 10%">환율</th>
+    </tr>
+    <tr>
+        <td style="text-align: center" data-field-description="BELNR"></td>
+        <td style="text-align: center" data-field-description="BLART_TXT"></td>
+        <td style="text-align: center" data-field-description="BUDAT"></td>
+        <td style="text-align: center" data-field-description="BLDAT"></td>
+        <td data-field-description="BKTXT" ><span class="ellipsis" style="width: 100%">1234567890123456789012345678901234567890123456789012345678901234567890</span>
+        </td>
+        <td style="text-align: center" data-field-description="WAERS"></td>
+        <td style="text-align: center;" data-field-description="KURSF" class="ellipsis">
+            1234567890123456789012345678901234567890123456789012345678901234567890
+        </td>
+    </tr>
+    </tbody>
+</table>

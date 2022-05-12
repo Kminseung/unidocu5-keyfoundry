@@ -1,0 +1,34 @@
+{{! stache!uni-e-fi/mustache/PRINT_EVIDENCETemplate }}
+<style>
+    .print-evidence-wrapper {border-collapse: collapse;margin-bottom: 10px;page-break-after: always;max-width: 1000px;}
+    .print-evidence-wrapper>tbody>tr>td {border: 1px solid black;}
+</style>
+{{#list}}
+    <table class="print-evidence-wrapper">
+        <tr>
+            <td>{{BUKRS}} {{GJAHR}} {{DOKNR}}</td>
+        </tr>
+        {{#cardData}}
+            <tr>
+                <td> {{>cardBillTemplateAsPartial}} </td>
+            </tr>
+        {{/cardData}}
+        {{#taxInvoiceView}}
+            <tr>
+                <td> {{>TaxInvoiceTemplateAsPartial}} </td>
+            </tr>
+        {{/taxInvoiceView}}
+        {{#attachData}}
+            <tr>
+                <td>
+                    {{#isImage}} <img src="{{imageUrl}}" style="max-width: 950px"/> {{/isImage}}
+                    {{^isImage}} <i class="fa fa-5x {{iconClass}}"></i> {{/isImage}}
+                    <p>{{name}}</p>
+                </td>
+            </tr>
+        {{/attachData}}
+    </table>
+{{/list}}
+
+{{>cardBillTemplateHeadAsPartial}}
+{{>TaxInvoiceHeadTemplateAsPartial}}

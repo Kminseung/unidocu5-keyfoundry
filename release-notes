@@ -1,0 +1,390 @@
+Project: unidocu5
+
+------------------------------------------------------------------------
+= Releases
+------------------------------------------------------------------------
+6.3.0-SNAPSHOT (2021.07.21)
+refs #24923 UniDOCU] 법인카드/세금계산서정산 계정코드별 세금코드 불공제 체크 수정
+
+6.3.0-SNAPSHOT (2021.07.14)
+refs #24313 [UniDOCU] 공지사항 / FAQ / 팝업설정 수정
+
+6.3.0-SNAPSHOT (2021.07.08)
+refs #22807 [UniDOCU] [표준화] UD_0201_001 법인카드 / UD_0201_000C 법인카드(대량) / UD_0201_011 매입세금계산서
+- F4 계정 HKONT 별 F4 세금코드 MWSKZ 기본값 설정
+
+6.3.0-SNAPSHOT (2021.06.14)
+refs #23952 unidocu5 비밀번호변경 로그인 후 활성화 및 오류 처리
+
+6.3.0-SNAPSHOT (2021.06.15)
+refs #24189 [UniDOCU] 매입세금계산서(내역조회) UD_0201_010 / xml upload - 업로드 이후 처리 기능 개선
+
+6.3.0-SNAPSHOT (2021.06.15)
+refs #23998 [UniDOCU] 기타전표 : 원천세 UD_0202_099 - 원천세코드별 원천세액(소득세, 주민세) 계산
+
+6.3.0-SNAPSHOT (2021.05.20)
+refs #23246 [UniDOCU] 반환전표 오류 처리
+
+6.3.0-SNAPSHOT (2021.05.13)
+refs #23461 [UniDOCU] 전표결재 화면-그리드 그룹번호 생성시 다른 전표종류 shift key로 묶이는 현상 수정
+
+6.3.0-SNAPSHOT (2021.05.03)
+refs #23348 [UniDOCU] 자주쓰는 비용항목 메뉴 및 컬럼명 변경
+* 비용 항목 관리 → 원클릭 전표 관리
+
+6.3.0-SNAPSHOT (2021.05.03)
+refs #23335 unidocu5 유니다큐 기본 스타일 수정
+
+6.3.0-SNAPSHOT (2021.04.21)
+refs #23230 KT&G 웹소스코드 진단결과 확인 요청건
+* 취약점이 1건 발생 (DRAFT_0011.js)
+
+6.3.0-SNAPSHOT (2021.04.21)
+refs #22800 [UniDOCU] Value-Up #1 전표작성:공통 - 자주쓰는 계정 모든 화면 적용
+refs #23061 [UniDOCU] Value-Up #1 전표작성:공통 - 비용항목 자동설정
+refs #22991 [UniDOCU] Value-Up #1 자주쓰는 계정 - 사용자, 전표유형별 계정 및 코스트센터 마스터 등록화면
+refs #22956 [UniDOCU] Value-Up #1 전표작성:공통 - 자주쓰는 계정 등록 및 비용항목 입력 기능
+
+6.3.0-SNAPSHOT (2021.04.08)
+refs #22800 unidocu5 비용정산 행추가시 금액 변동건 개선
+
+6.3.0-SNAPSHOT (2021.04.05)
+refs #22698 unidocu5 공지사항 readOnly인 경우 공지사항 팝업설정 되지 않는 현상
+
+6.3.0-SNAPSHOT (2021.04.05)
+refs #22687 unidocu5 UD_0204_100 선급금 정산 / UD_0204_102 전도금 정산 미결항목 조회 기능 추가
+
+6.3.0-SNAPSHOT (2021.04.01)
+refs #22667 unidocu5 UD_0201_010 매입세금계산서(내역조회) - 처리담당자별 이메일 입력 활성화
+
+6.3.0-SNAPSHOT (2021.04.01)
+refs #22612 daedong 전표작성 화면 메뉴별 증빙파일 업로드 필수체크 programSetting으로 설정
+=> refs #22631 위 일감 본사 적용 (+ 출장비 화면 추가)
+
+6.3.0-SNAPSHOT (2021.03.31)
+refs #22619 samyang 대시보드 링크아이콘 텍스트 수정
+
+6.3.0-SNAPSHOT (2021.03.17)
+refs #21864 unidocu5 세션 로그인 시간 기본값 변경
+* 30분 → 120분
+
+6.3.0-SNAPSHOT (2021.02.23)
+refs #21864 unidocu5 매입전자(세금)계산서 내역조회 - 화면크기에 따라 새로고침시 가로 스크롤 생성되는 현상
+
+6.3.0-SNAPSHOT (2021.01.29)
+refs #21169 unidocu5 화면별 도움말 등록, 열람기능 추가
+
+6.3.0-SNAPSHOT (2021.01.27)
+refs #21061 unidocu5 공지사항 게시글 작성 시, 공지사항 팝업 설정 기능
+=>refs #21251 unidocu5 공지사항 게시글 작성 시, 공지사항 팝업 설정 기능 추가 수정사항
+
+6.3.0-SNAPSHOT (2021.01.15)
+refs #21049 unidocu5 매입전자(세금)계산서 XML 업로드시 멀티 선택 불가하도록 수정
+
+6.3.0-SNAPSHOT (2021.01.06)
+refs #20917 unidocu5 IE에서 마이페이지 링크 클릭 시, 새 창 작게 뜨는 현상 수정
+
+6.3.0-SNAPSHOT (2021.01.06)
+refs #20643 unidocu5 추가데이터 등록 화면 생성
+
+6.3.0-SNAPSHOT (2021.01.05)
+refs #20841 unidocu5 지금금액 로직 -> Program Setting 설정 변경
+[법인,세금 계산서]
+* Program Setting 값 설정에 따라 금액 로직 변동
+** "증빙정보 세액 자동 계산사용", "증빙정보 승인금액 자동 계산사용"
+
+[선급금,전도금 정산 (VIEW_NAME -> uni-e-fi/view/UD_0204_100)]
+* 증빙구분에 따른 지급금액 로직건 수정 (기타증빙,세금계산서)
+** Program Setting 값 설정에 따라 금액 로직 변동
+*** "선급금 증빙정보 세액 자동 계산"
+
+6.3.0-SNAPSHOT (2020.12.14)
+refs unidocu5 datepicker mindate, maxdate api 구현
+
+6.3.0-SNAPSHOT (2020.12.10)
+refs #19864 unidocu5 buttonSetting의 FUNCNAME/SubId를 programSetting으로 설정
+
+6.3.0-SNAPSHOT (2020.12.01)
+refs #20112 unidocu5 차량운행일지 결재화면 기능 검토 및 적용
+* tonymoly 차량운행일지 사용 화면 기능 본사 적용
+* 차량 결재 문서 양식 추가
+
+6.3.0-SNAPSHOT (2020.11.23)
+refs #18378 unidocu5 JSONEditor => $u.thirdparty.JSONEditor
+* dialog require dependency -> $u.thirdParty로 사용
+
+6.3.0-SNAPSHOT (2020.11.18)
+refs #19690 unidocu5 $efi.createStatement.createStatementHandlerMap 전표생성 로직 화면단으로 이동
+
+6.3.0-SNAPSHOT (2020.11.17)
+refs #19782 daelim UD_0302_010 증빙 아이콘 CRD_SEQ INV_SEQ EVI_SEQ 값 있는 경우만 표시
+
+6.3.0-SNAPSHOT (2020.11.12)
+refs #19495 unidocu5 전표생성 RFC 화면별 programSetting 에서 설정
+
+6.3.0-SNAPSHOT (2020.11.10)
+refs #19596 unidocu5 onGridBeforeOpenF4DialogParams - programSetting 추가 위치 변경
+* unidocuUI -> $efi.createStatement.bindGridEvent
+
+6.3.0-SNAPSHOT (2020.11.06)
+refs #19310 unidocu5 세금계산서 양식 개선
+
+6.3.0-SNAPSHOT (2020.10.21)
+refs #19030 huneed 세금계산서 증빙 수량, 단가 0 인 경우 표시하지 않음
+
+6.3.0-SNAPSHOT (2020.10.20)
+refs #19036 huneed 세금계산서 증빙 양식 깨짐
+* 2byte 문자열 공백 제거
+
+6.3.0-SNAPSHOT (2020.10.07)
+refs #17122 unidocu5 UD_0201_003 법인카드 대량 처리 화면 이동 시 선택된 행 데이터 출력 되지 않음. 대량전표 생성 팝업 관련 refactoring, [진행 중 업체 반영 필요]
+* 증빙 선택 화면이동 대량처리 화면 삭제
+
+6.3.0-SNAPSHOT (2020.10.06)
+refs #18769 unidocu5 선급금정산 - 세금계산서 세금코드에 대한 세율 및 세액 유무 확인되지 않는 현상
+
+6.3.0-SNAPSHOT (2020.09.17)
+refs #18518 huneed 세금계산서정산 화면 통제로직 추가요청
+수입 세금계산서 자산전표 처리 불가
+
+6.3.0-SNAPSHOT (2020.08.26)
+refs #18022 medytox 법인카드 UD_0201_001 - 취소 건 비용항목 계정 입력 시 부호 변경 오류
+취소건 (-) 금액일 경우 절대값 처리
+
+6.3.0-SNAPSHOT (2020.08.24)
+refs #18030 hyenergy 증빙 팝업 layout  조정 trunk 적용
+* $efi.popup.openUD_0398_000
+** popup width 1000 -> 1200
+
+6.3.0-SNAPSHOT (2020.08.20)
+refs #18008 unidocu5 전표 생성 시 지급방법 오입력
+* ZTERM 있는 경우 ZLSCH, ZFBDT form 설정 validation
+
+6.3.0-SNAPSHOT (2020.08.12)
+refs #17799 unidocu5 보유카드 조회 화면 사원번호로 검색 시, 해당 소유자의 카드번호 조회
+
+6.3.0-SNAPSHOT (2020.07.31)
+refs #16116 unidocu5 f4 combo 재 조회 로직 필드 명으로 되어있는 경우 codeKey 값을 따르도록 적용
+* ex) $u.f4Data.getCodeComboOption($u.get('ZTERM').params['codeKey'], comboCodeQueryParams)
+
+6.3.0-SNAPSHOT (2020.07.10)
+refs #17142 unidocu5 보유카드 화면 수정
+
+6.3.0-SNAPSHOT (2020.07.01)
+refs #16992 yg1 UD_0601_020 위임,내역삭제,위임취소,삭제내역복구 버튼 (UD_0201_000) 동일하게 처리
+
+6.2.2-SNAPSHOT (2020.06.30)
+refs #16935 unidocu5 법인카드 "삭제" 내역 조회시 필드 추가
+
+6.2.2-SNAPSHOT (2020.06.26)
+refs #16719 unidocu5 전표 미리보기 기능 수정
+
+6.2.2-SNAPSHOT (2020.06.24)
+refs #16799 unidocu5 copy screen 호출 시 cache clear 수행
+
+6.2.2-SNAPSHOT (2020.06.24)
+refs #16829 unidocu5 UD_0302_010 전표목록 조회 기능 추가
+
+6.2.2-SNAPSHOT (2020.06.24)
+refs #16910 unidocu5 dash board 링크 수정 (지방세위텍스, 지방세) => 홈텍스
+
+6.2.2-SNAPSHOT (2020.06.24)
+refs #11567 unidocu4 onBeforeOpenF4Dialog - programSetting 에서 설정
+* refactoring onFormBeforeOpenF4DialogParams program setting
+** 전체 화면에서 사용하지 않음
+*** $u.unidocuUI(clientcore) => $efi.createStatement.bindEvent.bindCommonFormEvent(war)
+
+6.2.2-SNAPSHOT (2020.06.19)
+refs #16299 unidocu5 개선 법인 카드 증빙 양식 변경
+
+6.2.2-SNAPSHOT (2020.06.18)
+refs #16714 ubase 담당자 지정 메시지 출력 확인
+
+6.2.2-SNAPSHOT (2020.06.16)
+unidocu5-core 6.2.2-SNAPSHOT => 6.3.0-SNAPSHOT
+
+6.2.2-SNAPSHOT (2020.04.17)
+refs #15605 medytox 추가 데이터 비용항목 컬럼으로 표시
+* $efiAddDataHandler.js customize 구조 적용
+
+6.2.2-SNAPSHOT (2020.04.17)
+refs #15567 ubase 로그인 화면 디자인 시안 적용
+* unidocu-color.css 생성
+
+6.2.1-SNAPSHOT (2020.04.16)
+refs #15447 locknlock f4 데이터 조회시 시간 오래걸리는 현상
+* F4 Data 계정코드(HKONT) 호출시 중복 호출 막기 위한 Cache Key 추가
+
+6.2.1-SNAPSHOT (2020.04.13)
+refs #15109 unidocu5 sonarQube 결과 취약점 개선 (version 8.0)
+* stacheCustom.js
+** 중괄호는 if, for 와 같이 한 줄 블록에서 생략 할 수 있지만 버그가 발생할 수 있음.
+* nsReturnToInputParamsList.js
+** 부울 결과를 반전시키는것은 불필요하게 복잡
+*** !(rowData['EMPTY_OPT'] === 'X') => rowData['EMPTY_OPT'] !== 'X'
+* URLUtil.java
+** replaceAll => replace
+*** 첫번째 파라미터에서 정규표현식을 사용하지 않으면 replaceAll 사용할 필요없음.
+* CustomProperty.java
+** try~catch~fianlly => try-with-resources
+*** try 에 자원 객체를 전달하면 try 문이 끝나면 자동으로 자원을 종료
+* ServerAliasProperty.java
+** 조건 반복문 복잡 리펙토링
+* CacheCheckService.java
+** 중복된 변수 수정
+
+6.2.1-SNAPSHOT (2020.04.08)
+refs #15468 ubase UD_0204_0XX 증빙구분이 증빙없음 OR 초기화면일때 LIFNR 수정 불가
+* LIFNR 수정 가능 여부 설정 로직 제거 getEditableInfoByPAYGB_EVIKB custom handler 중복 로직
+
+6.2.1-SNAPSHOT (2020.04.03)
+refs #15366 medytox UD_0204_011 증빙구분별 통화/환율 설정, 통화별 세금코드/환율 설정
+* uni-e-fi/view/UD_0204_001 customize 구조 적용
+
+6.2.1-SNAPSHOT (2020.04.01)
+refs #15318 unidocu5 법인카드정산(대량) 메뉴 세금코드 변경시 세액계산 programSetting 적용 로직 확인
+* before - 최초 화면이 열리는 경우에만 값 셋팅
+* after  - 검색 버튼을 눌렀을때도 갱신
+refs #15122 medytox UD_0201_000C 추가 데이터 설정 기능 추가
+* 추가 데이터 program setting 적용
+* 소스 정리
+** MODE event bind 제거 handleAssignPersonVisible 위 수임 관련 button handler 없음
+** onBlockPaste 로직 제거
+*** gridObj.setBlockPasteMode('none'); 적용
+** 등
+* $efiAddDataHandler
+** $efi.addDataHandler.getFNAMEList cache 적용
+** $efi.addDataHandler.validateAddDataByRowIndex 추가
+* $efiDialog.js
+** $efi.dialog.addDataDialogHKONT_TXTMap cache 적용
+
+6.2.1-SNAPSHOT (2020.03.17)
+refs #14826 unidocu5  언어 수정, F8 UNIPOST 사용자 계정인 경우도 default 사용하지 않음.
+
+6.2.1-SNAPSHOT (2020.03.16)
+refs 14691 unidocu5 법인카드정산(대량) 메뉴 세금코드 변경시 세액계산 programSetting 적용
+* 세금이 0원으로 조회되는 데이터에서 세금코드 0% -> 10% 변경시 -> 세액 0원으로 셋팅되는 현상
+** 세금코드 변경시 0% -> 10% 이면 세액 계산 될 때 Web 에서 처리되는 세액 계산적용
+
+6.2.1-SNAPSHOT (2020.03.16)
+refs 15004 unidocu5 법인카드정산(UD_0201_001)  비용항목 세금코드 변경시 헤더/공급자정보 세금금액 안바뀜 현상
+* 비용항목 데이터가 한건일경우
+** 헤더/공급자정보 세금코드, 세액 변경
+
+6.2.1-SNAPSHOT (2020.03.12)
+refs #14911 casamia unidocu 레이아웃 변경시 리포트 메뉴 사라짐 현상
+* layout-top 일때 마지막 메뉴 사라지는 현상
+
+6.2.1-SNAPSHOT (2020.03.10)
+refs #14883 unidocu5 xml upload 버튼 오류
+* xml upload 버튼은 SAP Common Setting 으로 제어
+** 현재 삭제 버튼 클릭 후 다시 정상 버튼을 클릭하게 되면 "xml upload " 버튼이 생기는 오류건 수정
+
+6.2.1-SNAPSHOT (2020.03.06)
+refs #14783 unidocu5 법인카드정산메뉴(UD_0201_000) 다중 전표생성 및 체크 로직 제거
+* 세액 존재, 존재하지 않는건, 같은 년월 체크 로직 삭제
+* 전표생성시 (createMassStatement) 그리드 데이터 한 건 일때만 전표작성 가능
+* 2건 이상일 경우 "전표 생성은 한 건만 가능합니다." 메시지 출력
+
+6.2.1-SNAPSHOT (2020.03.06)
+* 6.2.0-SNAPSHOT => 6.2.1-SNAPSHOT
+refs #14679 casamia e-Accounting System 구축 산출물 관련 PMD report
+* 자원 해제 미실시 (CloseResource)
+
+6.2.0-SNAPSHOT (2020.03.04)
+refs #14150 unidocu5 sonarQube 결과 취약점 개선
+* SNAPSHOT version up
+** 6.1.0-SNAPSHOT => 6.2.0-SNAPSHOT
+
+6.1.0-SNAPSHOT (2020.03.04)
+refs #14679 casamia e-Accounting System 구축 산출물 관련 PMD report
+* // NOPMD => pmd ignore https://pmd.github.io/latest/pmd_userdocs_suppressing_warnings.html
+
+6.1.0-SNAPSHOT (2020.02.28)
+* refs #14691 법인카드정산(대량) 메뉴 세금코드 변경시 세액계산 programSetting 적용
+
+6.1.0-SNAPSHOT (2020.02.27)
+refs #14673 casamia UD_0201_000C uni-e-fi/view/UniDocu001/UD_0201_100 전표생성 validation 오류
+* UD_0201_100.js
+** gridObj.validateGridRequired(); => gridObj.validateSELECTEDGridRequired();
+* gridObj.validateSELECTEDGridRequired(gridObj.getSELECTEDJSONData());
+** => gridObj.validateSELECTEDGridRequired();
+
+6.1.0-SNAPSHOT (2020.02.25)
+* refs #14634 casamia UD_0203_001 가지급신청 화면 open 시 공급업체 변경 이벤트 호출 UD_0202_001 과 동일
+
+6.1.0-SNAPSHOT (2020.02.19)
+refs #14150 unidocu5 sonarQube 결과 취약점 개선
+* $efiCreateStatement.js
+** if (!koart || !newko) {} -> 구문이 비어있음
+* $efiKOSTL_HKONT_Relation.js
+** if (gridObj.getGridHeader('KOSTL') == null || gridObj.getGridHeader('KOSTL') == null) -> 중복 조건
+* BizPopupIgnoreSessionCheckController.java - 메소드명 첫번째 대문자 -> 소문자 수정
+
+6.1.0-SNAPSHOT (2020.02.14)
+* refs #14499 unidocu5 결재 창 닫히는 경우 그룹번호   취소 확인 기능 제거. 강태욱 이사님 요청
+
+6.1.0-SNAPSHOT (2020.02.14)
+* refs #14486 medytox 계정변경 시 세금코드 체크로직 보완 요청
+
+6.1.0-SNAPSHOT (2020.02.07)
+* UniDocuUITemplateRenderer.getTemplateByClassPathResourceWithComplexScope 추가
+
+6.1.0-SNAPSHOT (2020.02.03)
+refs #14339 unidocu5 UD_0201_010 매입세금계산서 XML upload 버튼위치 변경
+
+6.1.0-SNAPSHOT (2020.01.29)
+refs #14244 unidocu5 비밀번호 초기회/변경 email 인증 기능 추가
+
+6.1.0-SNAPSHOT (2020.01.20)
+refs #14213 unidocu5 theme: 제거
+* unipost-theme -> unipost
+
+6.1.0-SNAPSHOT (2020.01.20)
+* jenkins docker 적용 관련
+** unidocu_demo.properties 제거 unidocu_demo-docker.properties 사용
+** unidocu_demo-410 properties 적용
+
+6.1.0-SNAPSHOT (2020.01.08)
+refs #14083 unidocu5 EA전표결재 증빙조회 아이콘 출력 기준 변경
+* imagetext type CRD_SEQ, INV_SEQ, EVI_SEQ 전부 없으면 hideImage
+
+6.1.0-SNAPSHOT (2020.01.07)
+refs #14086 unidocu5 전도금/선급금/가지급정산 세금코드변경 시 지급금액 -> 정산예정금액 반영
+* UD_0204_001.js MWSKZ change event 추가
+
+6.1.0-SNAPSHOT (2020.01.07)
+refs #14087 unidocu5 매입세금계산서 상태 체크 시 자동 검색
+* UD_0201_010 처리담당자, 상태 값 변경 시 재조회 로직 추가
+
+6.1.0-SNAPSHOT (2020.01.06)
+refs #14021 unidocu5 UD_0101_100 개인 환경 설정 암호 설정, 부재중 설정 사용 여부 program setting 으로 적용
+
+6.1.0-SNAPSHOT (2020.01.06)
+refs #14030 unidocu5 UD_0202_021 종이/지로/현금영수증  KURSF 값 설정 되지 않음.
+* UD_0202_021 $u.unidocuCurrency.bind_setKRUSF_onWAERS_BUDAT_change(); 추가
+
+6.1.0-SNAPSHOT (2020.01.06)
+refs #13958 unidocu5 12 안전한 알고리즘
+* DRAFT_0011 approval step(ZUNIEWF_1103) ZUNIEWF_1103 개인환경설정-암호설정조회
+** WF_PW -> WF_PW2
+* UD_0101_100 ZUNIEWF_1101 개인환경설정-암호설정등록
+** WF_PW -> WF_PW2, CURRENT_WF_PW -> CURRENT_WF_PW2
+** 비밀번호 설정 되어있지 않은 경우 CURRENT_WF_PW 빈값으로 전송 신규 비밀 번호 저장
+** 비밀번호 설정 되어있는 경우 CURRENT_WF_PW 빈값으로 전송시 오류 -> 기존 비밀번호 입력 validation
+
+6.1.0-SNAPSHOT (2020.01.03)
+refs #13958 unidocu5 12 안전한 알고리즘
+* destination properties jco.client.passwd AES encrypt 적용
+
+6.1.0-SNAPSHOT (2020.01.03)
+refs #13958 unidocu5 12 안전한 알고리즘
+* org.apache.commons.lang -> * org.apache.commons.lang3
+* SystemUtils.PATH_SEPARATOR
+** org.apache.commons.lang3.SystemUtils
+*** Deprecated Use File.pathSeparator, since it is guaranteed to be a string containing a single character and it does not require a privilege check.
+
+6.1.0-SNAPSHOT (2020.01.23)
+refs #14258 unidocu5 엑셀 업로드 수정
+* $efi.createStatement.afterMultiCellChange
+** parameter 로 엑셀 데이터 받을 수 있도록 수정

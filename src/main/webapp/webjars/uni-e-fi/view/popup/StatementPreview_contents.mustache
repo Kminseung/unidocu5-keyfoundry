@@ -1,0 +1,111 @@
+{{!--stache!uni-e-fi/view/popup/StatementPreview_header--}}
+<style>
+    #statement-preview-wrapper {padding: 10px;}
+    #statement-preview-wrapper h1 { font-size: 23px; font-weight: bold; }
+    #statement-preview-wrapper th { border: 2px solid black; background:#D5D5D5;}
+    #statement-preview-wrapper .dotted1 > td,
+    #statement-preview-wrapper .dotted2 > td,
+    #statement-preview-wrapper .dotted3 > td{padding-left:5px;padding-right:5px;vertical-align: middle; border-top: 1px dotted #cccccc;border-right: 1px dotted #cccccc;}
+    #statement-preview-wrapper .statement-preview-contents{ border: 2px solid black; }
+    #statement-preview-wrapper .statement-preview-contents td { height: 14px; }
+    #statement-preview-wrapper .dotted1{border-top: 2px solid black;}
+    #statement-preview-wrapper .dotted3{border-bottom: 2px solid black; border-left: 2px solid black; border-right: 2px solid black;}
+    #statement-preview-wrapper { text-align: center; }
+</style>
+<div id="statement-preview-wrapper" style="">
+    <h1>{{{회계전표}}}</h1>
+    <table>
+        <tr>
+            <td style="text-align: left;">
+                <span id="evidence-wrapper">{{#evikey}}{{{증빙번호}}} : {{evikey}}{{/evikey}}<img style = "cursor: pointer; margin-left: 5px; vertical-align: middle" src="{{contextPath}}/images/btn/btn_view.gif" alt="evidence link"/></span>
+                <span>{{first_ot_data1.BKTXT}}</span>
+            </td>
+            <td style="text-align: right;">{{{전표유형}}} : {{first_ot_data1.BLART}} {{first_ot_data1.BLART_TXT}}</td>
+        </tr>
+    </table>
+    <table class="statement-preview-contents">
+        <tr>
+            <th style="width: 15%">{{{전표번호}}}+{{{항목}}}</th>
+            <th style="width: 8%">{{{증빙일}}}</th>
+            <th style="width: 8%">{{{계정코드}}}</th>
+            <th style="width: 14%">{{{계정명}}}</th>
+            <th style="width: 6%">{{{거래처코드}}}</th>
+            <th style="width: 20%">{{{거래처명}}}</th>
+            <th style="width: 6%" rowspan="2">{{{통화}}}</th>
+            <th style="width: 14%" colspan="3">{{{금액}}}({{{원화}}})</th>
+            <th style="width: 4%" rowspan="2">{{{차/대}}}</th>
+        </tr>
+        <tr>
+            <th>{{{사업영역}}}+{{{명}}}</th>
+            <th>{{{전기일}}}</th>
+            <th>{{{코스트센터}}}</th>
+            <th>{{{코스트센터명}}}</th>
+            <th>{{{세금코드}}}</th>
+            <th>{{{지정}}}</th>
+            <th colspan="3">{{{금액}}}({{{외화}}})</th>
+        </tr>
+        <tr>
+            <th>{{{사업장}}}+{{{명}}}</th>
+            <th>{{{만기일}}}</th>
+            <th>{{{오더번호}}}</th>
+            <th>{{{내부오더명}}}</th>
+            <th></th>
+            <th colspan="6">{{{적요}}}</th>
+        </tr>
+
+        {{#ot_data2}}
+            <tr class="dotted1">
+                <td> {{BELNR}} {{BUZEI}}</td>
+                <td>{{first_ot_data1.FORMATTED_BLDAT}}</td>
+                <td class="alignCenter NGB HKONT"><a>{{HKONT}}</a></td>
+                <td class="alignCenter NGB">{{HKONT_TXT}}</td>
+                <td>{{LIFNR}}</td>
+                <td class="alignCenter NGB">{{LIFNR_TXT}}</td>
+                <td>{{LWAERS}}</td>
+                <td style="text-align: right; width: 6%" class="NGB">{{S_DMBTR_TXT}}</td>
+                <td style="text-align: right; width: 2%"></td>
+                <td style="text-align: right; width: 6%" class="NGB">{{H_DMBTR_TXT}}</td>
+                <td class="alignCenter bothType" rowspan="2">{{SHKZG_TXT}}</td>
+            </tr>
+            <tr class="dotted2">
+                <td>{{GSBER_TXT}}</td>
+                <td>{{first_ot_data1.FORMATTED_BUDAT}}</td>
+                <td>{{KOSTL}}</td>
+                <td>{{KOSTL_TXT}}</td>
+                <td>{{MWSKZ}}</td>
+                <td>{{ZUONR}}</td>
+                <td>{{WAERS}}</td>
+                <td style="text-align: right; width: 6%" class=" NGB">{{S_WRBTR_TXT}}</td>
+                <td style="text-align: right; width: 2%"></td>
+                <td style="text-align: right; width: 6%">{{H_WRBTR_TXT}}</td>
+            </tr>
+            <tr class="dotted3">
+                <td>{{BUPLA_TXT}}</td>
+                <td>{{FORMATTED_ZFBDT}}</td>
+                <td>{{AUFNR}}</td>
+                <td>{{AUFNR_TXT}}</td>
+                <td></td>
+                <td style="text-align: left;" colspan="6">{{SGTXT}}</td>
+            </tr>
+        {{/ot_data2}}
+    </table>
+
+    <table class="total">
+        <tr>
+            <td class="NGB" rowspan="2" style="width: 15%">{{{합계}}}</td>
+            <td class="NGB" rowspan="2" style="width: 56%"></td>
+            <td class="NGB">{{LWAERS}}</td>
+            <td class="NGB" style="text-align: right; width: 6%">{{S_DMBTR_TXT_SUM}}</td>
+            <td class="NGB" style="text-align: right; width: 2%">/</td>
+            <td class="NGB" style="text-align: right; width: 6%">{{H_DMBTR_TXT_SUM}}</td>
+            <td class="NGB" style="text-align: right; width: 4%"></td>
+        </tr>
+        <tr id="WRBTR_SUM_tr">
+            <td class="NGB" style="width: 6%;">{{WAERS}}</td>
+            <td class="NGB" style="text-align: right; width: 6%;">{{S_WRBTR_TXT_SUM}}</td>
+            <td class="NGB" style="text-align: right; width: 2%;">/</td>
+            <td class="NGB" style="text-align: right; width: 6%;">{{H_WRBTR_TXT_SUM}}</td>
+            <td class="NGB" style="width: 4%;"></td>
+        </tr>
+    </table>
+</div>

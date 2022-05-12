@@ -1,0 +1,37 @@
+{{! stache!uni-e-fi/mustache/TaxInvoiceHeadTemplate }}
+<!--suppress CssUnusedSymbol -->
+<style>
+    /** @formatter:off */
+    body { margin:0; padding: 0}
+    table:not(:last-child) td { border-bottom: none; }
+    .table_menu_blue { font-size: 12px; font-weight: normal; }
+    .table_menu_bluebold1 { font-size: 12px; font-weight: bold; }
+    .table_menu_bluebold2 { font-size: 12px; font-weight: bold; }
+    .table_menu_bluebold { font-size: 11px; font-weight: bold; }
+    .table_menu_title_bluebold1 { font-size: 18px; font-weight: bold; }
+    .table_menu_graybold { font-size: 12px; color: #515151; font-weight: bold; }
+    .table_menu { font-size: 12px; }
+    .table_menu_padding { padding-left:5px; }
+
+</style>
+{{#STATUS_SUBSTR_0_1_IS_1}}
+    <style>
+        td { border: 1px solid #d24342; }
+        .table_menu_title_bluebold1 { color: #d24342; }
+        .table_menu_blue { color: #d24342; }
+        .table_menu_bluebold1 { color: #d24342; }
+        .table_menu_bluebold2 { background-color: #ffe7e7; color: #d24342; }
+        .table_menu_bluebold { color: #d24342; }
+    </style>
+{{/STATUS_SUBSTR_0_1_IS_1}}
+{{^STATUS_SUBSTR_0_1_IS_1}}
+    <style>
+        td { border: 1px solid #2b5bb5; }
+        .table_menu_title_bluebold1 { color: #2b5bb5; }
+        .table_menu_blue { color: #2b5bb5; }
+        .table_menu_bluebold1 { color: #2b5bb5; }
+        .table_menu_bluebold2 { background-color: #DDE3EE; color: #2b5bb5; }
+        .table_menu_bluebold { color: #2b5bb5; }
+        /** @formatter:on */
+    </style>
+{{/STATUS_SUBSTR_0_1_IS_1}}

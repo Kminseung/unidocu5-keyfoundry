@@ -1,0 +1,17 @@
+{{!stache!uni-e-approval/module/draftTitleTemplate}}
+<style>
+    .approval-title-table .title { font-size: 20px; font-weight: bold;}
+    .approval-title-table th {background-color: #f4f4f4;}
+    .approval-title-table th,
+    .approval-title-table td { border: 1px solid #ddd; padding: 3px 0; height: 22px; text-align: center;}
+</style>
+<div style="margin-bottom: 10px;">
+    <table class="approval-title-table">
+        <tr>
+            <td class="title" rowspan="3" data-field-description="WF_GB_TXT">[{{WF_GB_TXT}}]  {{description}}</td>
+            <th style="width: 170px;" data-field-description="WF_GB_TXT">{{{결재문서구분}}}</th><td style="width: 170px;">{{WF_GB_TXT}}</td>
+        </tr>
+        <tr> <th>{{{문서번호}}}</th><td data-field-description="WF_KEY_TEXT">{{WF_KEY_TEXT}}</td> </tr>
+        <tr> <th>{{{문서공개}}}</th><td></td> </tr>
+    </table>
+</div>

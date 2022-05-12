@@ -1,0 +1,45 @@
+{{! stache!uni-e-approval/mustache/embedStatementZUNIEFI_6500Template }}
+<div class="unidocu-approval-contents">
+    <style>
+        .unidocu-approval-contents table td,
+        .unidocu-approval-contents table th {
+            font-size: 12px;
+            border: 1px solid #ccc;
+            word-break: break-all;
+            text-align: center;
+            height: 20px;
+            background-color: #ffffff;
+            padding: 3px;
+        }
+        .unidocu-approval-contents tbody .header td {
+            background-color: #eee;
+        }
+    </style>
+
+    <table id="contents" style="font-weight: bold; text-align: right; margin-top: 10px;">
+        <tr class="header">
+            <td>사용일자</td>
+            <td>요일</td>
+            <td>주행 전 계기판</td>
+            <td>주행 후 계기판</td>
+            <td>주행거리</td>
+            <td>출/퇴근</td>
+            <td>출퇴근거리</td>
+            <td>업무용거리</td>
+            <td>개인용거리</td>
+        </tr>
+        {{#OT_DATA}}
+        <tr>
+            <td data-field-description="USEDT">{{USEDT}}</td>
+            <td data-field-description="USEDTT_TXT">{{USEDTT_TXT}}</td>
+            <td data-field-description="BF_KM" style="text-align: right">{{BF_KM}}</td>
+            <td data-field-description="AF_KM" style="text-align: right">{{AF_KM}}</td>
+            <td data-field-description="MILEAGE" style="text-align: right">{{MILEAGE}}</td>
+            <td data-field-description="WONOFF_TXT">{{WONOFF_TXT}}</td>
+            <td data-field-description="USEKM1" style="text-align: right">{{USEKM1}}</td>
+            <td data-field-description="USEKM2" style="text-align: right">{{USEKM2}}</td>
+            <td data-field-description="USEKM3" style="text-align: right">{{USEKM3}}</td>
+        </tr>
+        {{/OT_DATA}}
+    </table>
+</div>

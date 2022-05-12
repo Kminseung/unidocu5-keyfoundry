@@ -1,0 +1,20 @@
+<style>
+    #displayAttachFile {text-align: center;}
+    #fileInfo.unidocu-table .unidocu-td{ text-align: right; padding-right: 20px;margin-top: 10px; }
+    .file-link {text-decoration: underline !important;color: blue !important;}
+    #field-waers {display: none;}
+</style>
+
+<h2 class="page_title NGB" style="margin-left: 10px;">{{{종이증빙 보기}}}</h2>
+<div id="displayAttachFile"></div>
+<table id="fileInfo" class="unidocu-table gray">
+    <tr><th class="unidocu-th">{{{증빙일}}}</th><td class="unidocu-td" id="EVI_DATE"></td></tr>
+    <tr><th class="unidocu-th">{{{증빙제목}}}</th><td class="unidocu-td" id="EVI_TITLE"></td></tr>
+    <tr><th class="unidocu-th">{{{증빙번호}}}</th><td class="unidocu-td" id="EVI_SEQ"></td></tr>
+    <tr><th class="unidocu-th">{{{파일명}}}</th><td class="unidocu-td"><a class="file-link" id="ZFILE"></a></td></tr>
+    <tr><th class="unidocu-th">{{{공급업체코드}}}</th><td class="unidocu-td" id="LIFNR"></td></tr>
+    <tr><th class="unidocu-th">{{{공급업체명}}}</th><td class="unidocu-td" id="LIFNR_TXT"></td></tr>
+    <tr><th class="unidocu-th">{{{공급가액}}}</th><td class="unidocu-td" id="WRBTR"></td></tr>
+    <tr><th class="unidocu-th">{{{세액}}}</th><td class="unidocu-td" id="FWSTE"></td></tr>
+    <tr id="field-waers"><th class="unidocu-th">{{{통화}}}</th><td class="unidocu-td" id="WAERS"></td></tr>
+</table>

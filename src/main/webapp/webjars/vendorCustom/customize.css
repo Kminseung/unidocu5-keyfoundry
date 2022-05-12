@@ -1,0 +1,12 @@
+@import "../theme/sk-demo/sk-demo.css"; /* delete when customizing */
+@import "../theme/unidocu-demo/unidocu-new.css";
+/* for vendor customize */
+
+#top-area #top-logo {
+    cursor: pointer;
+    float: left;
+    margin-left: 20px;
+    width: 133px;
+    height: 44px;
+    background: url(magnachip/images/main_logo.jpg) no-repeat ;
+}
