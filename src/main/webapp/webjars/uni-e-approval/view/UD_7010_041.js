@@ -5,9 +5,9 @@ define(function () {
     return function () {
         $u.unidocuUI();
         var uniJsTree = $u.UniJsTree($('#pos-tree'), {
-            load_node: function () {
-                uniJsTree.open_all();
-            },
+            // load_node: function () {
+            //     uniJsTree.open_all();
+            // },
             select_node: function (nodeData) {
                 formHandler.hideAllForm();
                 formHandler.setJobForm(nodeData);
@@ -17,6 +17,7 @@ define(function () {
             var $jobInfo = $('#job-info').detach();
             var $uniButtonsJob = $('#uni-buttons-job').detach();
             var $uniButtonsJobAdd = $('#uni-buttons-job-insert').detach();
+            var $searchTable = $('.unidocu-table').detach();
             var $rightWrapper = $('#rightWrapper');
 
             function clearForm($el) {
@@ -28,6 +29,7 @@ define(function () {
                     $jobInfo.detach();
                     $uniButtonsJob.detach();
                     $uniButtonsJobAdd.detach();
+                    $searchTable.detach();
                     clearForm($jobInfo);
                 },
                 setJobForm: function (nodeData) {

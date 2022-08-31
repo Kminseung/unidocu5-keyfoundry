@@ -19,7 +19,9 @@ define(function () {
             }));
             $ewf.handleChangeLine();
             $ewf.renderDocumentReferenceWF_ORG();
-            $u.setValues('uni-form-table5', $u.page.getPageParams());
+            var pageParams = $u.page.getPageParams();
+            if(pageParams['WF_TITLE']) pageParams['WF_TITLE'] = $keyfoundry.decodingUTF8(pageParams['WF_TITLE']);
+            $u.setValues('uni-form-table5', pageParams);
             $ewf.renderEmbedStatementArea(wf_gb, $u.page.getPageParams()['GRONO']);
             $u.buttons.addHandler({
                 "requestApproval": function () {
@@ -58,6 +60,8 @@ define(function () {
                     });
                 }
             });
+
+            $keyfoundry.statementPop();
         }
     };
 });

@@ -20,6 +20,7 @@ define(function () {
             var $uniButtons = $('#uni-buttons').detach();
             var $rightWrapper = $('#rightWrapper');
             var $leftWrapper = $('#leftWrapper');
+            var $searchTable = $('.unidocu-table').detach();
 
             return {
                 hideAllForm: function () {
@@ -27,6 +28,7 @@ define(function () {
                     $uniButtonsPos.detach();
                     $uniButtonsPosAdd.detach();
                     $uniButtons.detach();
+                    $searchTable.detach();
                     $posInfo.find('input[type=text]').val('');
                 },
                 setPosForm: function (nodeData) {
@@ -39,6 +41,7 @@ define(function () {
         }();
         return function () {
             formHandler.hideAllForm();
+            $('.unidocu-table').hide();
             $nst.is_data_ot_data('ZUNIEWF_1012', {}, function (ot_data) {
                 $.each(ot_data, function (index, item) {
                     item.parent = item['HEAD_KEY'];

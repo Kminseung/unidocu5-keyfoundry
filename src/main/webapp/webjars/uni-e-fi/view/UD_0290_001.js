@@ -11,7 +11,8 @@ define(function() {
         $u.programSetting.appendTemplate('setCheckBarAsRadio', {
             defaultValue: 'false',
             description: '그리드 선택 컬럼 radio mode 로 설정'
-        });                                                                                                                                                                                                                                                                                                                                                                                        $u.programSetting.appendTemplate('doSave', {
+        });
+        $u.programSetting.appendTemplate('doSave', {
             defaultValue: 'ZUNIEFI_4033',
             description: '[비용항목 관리] 저장 RFC'
         });

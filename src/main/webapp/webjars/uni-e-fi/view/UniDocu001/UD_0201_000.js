@@ -117,11 +117,67 @@ define(function () {
                     });
                 }
                 if(buttonId === 'assignPerson') {
-                    $u.dialog.f4CodeDialog.open({
-                        popupKey: 'BPERNR',
-                        codePopupCallBack: function (pernr) {
-                            callZUNIEFI_1003({BPERNR: pernr});
-                        }
+                    var dialogId = 'assignPersonDialog';
+                    var assignPersonDialog = '' +
+                        '<div>' +
+                        '   <div class="unidocu-form-table-wrapper" data-sub-group="uiDailog" id="{dialogId}">' +
+                        '</div>';
+                    var $dialog = $($u.util.formatString(assignPersonDialog, {dialogId: dialogId}));
+
+                    $u.renderUIComponents($dialog);
+                    $u.baseDialog.openModalDialog($dialog, {
+                        title: '위임',
+                        draggable: true,
+                        width: 400,
+                        buttons: [
+                            $u.baseDialog.getButton('저장', function () {
+                                var BPERNR = $u.get('BPERNR').getValue();
+                                var COMMT = $u.get('COMMT').getValue();
+
+                                if(BPERNR === '') {
+                                    unidocuAlert($u.util.formatString($mls.getByCode('M_formInputValidation'), {thText: '수임자'}));
+                                    return;
+                                } else if(COMMT === '') {
+                                    unidocuAlert($u.util.formatString($mls.getByCode('M_formInputValidation'), {thText: '위임사유'}));
+                                    return;
+                                } else {
+                                    callZUNIEFI_1003({
+                                        BPERNR: BPERNR,
+                                        COMMT: COMMT
+                                    });
+                                }
+                                $dialog.dialog('destroy');
+                            })
+                        ]
+                    });
+                } else if(buttonId === 'cancelAssignPerson') {
+                    var dialogId2 = 'cancelAssignPerson';
+                    var cancelAssignPersonDialog = '' +
+                        '<div>' +
+                        '   <div class="unidocu-form-table-wrapper" data-sub-group="uiDialog" id="{dialogId}"</div>' +
+                        '</div>';
+                    var $dialog2 = $($u.util.formatString(cancelAssignPersonDialog, {dialogId: dialogId2}));
+
+                    $u.renderUIComponents($dialog2);
+                    $u.baseDialog.openModalDialog($dialog2, {
+                        title: '위임취소',
+                        draggable: true,
+                        width: 400,
+                        buttons: [
+                            $u.baseDialog.getButton('확인', function () {
+                                var COMMT = $u.get('COMMT').getValue();
+                                if(COMMT === '') {
+                                    unidocuAlert($u.util.formatString($mls.getByCode('M_formInputValidation'), {thText: '취소사유'}));
+                                    return;
+                                } else {
+                                    callZUNIEFI_1003({
+                                        CLEAR: 'X',
+                                        COMMT: $u.get('COMMT').getValue()
+                                    });
+                                }
+                                $dialog2.dialog('destroy');
+                            })
+                        ]
                     });
                 } else {
                     gridObj.asserts.rowSelected();

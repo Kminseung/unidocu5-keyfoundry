@@ -5,10 +5,10 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>com.unipost</groupId><artifactId>unidocu5-core</artifactId><version>6.3.0-SNAPSHOT</version>
+        <groupId>com.unipost</groupId><artifactId>unidocu5-core-keyfoundry</artifactId><version>6.3.0-keyfoundry-SNAPSHOT</version>
     </parent>
 
-    <artifactId>unidocu5-magnachip</artifactId>
+    <artifactId>unidocu5-keyfoundry</artifactId>
     <packaging>war</packaging>
 
     <repositories>
@@ -48,7 +48,7 @@
     </dependencies>
 
     <build>
-        <finalName>unidocu5-magnachip</finalName>
+        <finalName>unidocu5-keyfoundry</finalName>
         <plugins>
             <plugin>
                 <groupId>org.owasp</groupId>

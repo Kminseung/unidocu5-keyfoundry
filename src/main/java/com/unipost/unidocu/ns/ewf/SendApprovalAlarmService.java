@@ -17,6 +17,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
@@ -69,7 +70,8 @@ public class SendApprovalAlarmService extends AbstractJAVAService {
         List<String> receiverList = Arrays.asList(receiverListString.split(","));
 
         UniPostMailSender.sendHtmlMail(subject, contents, receiverList);
-        namedService.call("ZUNIEWF_4317", new ImportParam(map));
+        // ZUNIEWF_4317 : 결재 메일 로그 기록 함수
+        // namedService.call("ZUNIEWF_4317", new ImportParam(map));
     }
 
 }

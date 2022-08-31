@@ -4,7 +4,7 @@
 define(['uni-e-approval/$ewf/modifyApprovalDialog'], function (modifyApprovalDialog) {
     return function () {
         $ewf.dialog = {};
-        modifyApprovalDialog(); //$ewf.dialog.modifyApprovalDialog
+        modifyApprovalDialog();
         $ewf.dialog.approvalCommentsDialog = {};
         $ewf.dialog.approvalCommentsDialog.open = function (params) {
             var title = params['title'];
@@ -98,7 +98,7 @@ define(['uni-e-approval/$ewf/modifyApprovalDialog'], function (modifyApprovalDia
                         useSelectWithoutCallback: true,
                         codePopupCallBack: function (_pernr) {
                             $.each(gridObj.getJSONData(), function (index, item) {
-                                if (item['PERNR'] === _pernr) throw $mls.getByCode('M_alredyAdded');
+                                if (item['PERNR'] === _pernr) throw $mls.getByCode('M_alreadyAdded');
                             });
                             $nst.is_data_os_data('ZUNIEWF_1042', {PERNR: _pernr}, function (os_data) {
                                 gridObj.addRowByJSONData(os_data);
@@ -121,7 +121,7 @@ define(['uni-e-approval/$ewf/modifyApprovalDialog'], function (modifyApprovalDia
                     SMTP_ADDRs.push(item['SMTP_ADDR']);
                 });
                 item['SMTP_ADDR'] = SMTP_ADDRs.join(',');
-                var redirectUrlTemplate =  '/unidocu/view.do?programId=DRAFT_0011&ID={APPR_ID}&PERNR={PERNR}&BUKRS={BUKRS}&WF_KEY={WF_KEY}&showAsPopup=true';
+                var redirectUrlTemplate = '/unidocu/view.do?programId=DRAFT_0011&ID={APPR_ID}&PERNR={PERNR}&BUKRS={BUKRS}&WF_KEY={WF_KEY}&showAsPopup=true';
                 item['redirectUrl'] = $u.util.formatString(redirectUrlTemplate, item);
 
 

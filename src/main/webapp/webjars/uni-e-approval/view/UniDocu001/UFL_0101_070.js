@@ -13,7 +13,6 @@ define(function () {
         });
 
         return function () {
-            $('#search-condition').hide();
             $u.buttons.triggerFormTableButtonClick();
         }
     }

@@ -241,10 +241,11 @@ define(function () {
             jsonData["WF_ID"] = jsonData["ID"];
             jsonData["WF_ID_TXT"] = jsonData["SNAME"];
             if (targetGrid.getRowCount() >= 10) throw $mls.getByCode('M_canNotAddMoreThanTenUser');
-            if (targetGrid.$F(jsonData['WF_ID'], 'WF_ID').length > 0) throw $u.util.formatString($mls.getByCode('M_alreadAddedUser'), jsonData);
+            if (targetGrid.$F(jsonData['WF_ID'], 'WF_ID').length > 0) throw $u.util.formatString($mls.getByCode('M_alreadyAddedUser'), jsonData);
 
             jsonData['DISPLAY_TEXT'] = $u.util.formatString('{JOB_KEY_TXT} {WF_ID_TXT}', jsonData);
             jsonData['WF_AGRET'] = '';
+            jsonData['WF_FINAN'] = '0';
             var gridData = targetGrid.getJSONData();
             var clonedJSONData = $.extend({}, jsonData);
             delete clonedJSONData.id;

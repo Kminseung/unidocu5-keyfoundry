@@ -27,7 +27,6 @@ public class getLoginData {
         nsParam.getImportParam().put("PERNR", USERID);
         nsParam.getImportParam().put("LOGIN_TYPE", "S");
         loginService.call(nsParam);
-
         return "redirect:/";
     }
 

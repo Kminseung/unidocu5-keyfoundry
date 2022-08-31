@@ -1,5 +1,5 @@
 /**
- * UD_0201_001    법인카드 전표등록 - 전표생성
+ * UD_0201_001    법인카드 (건별) - 전표작성
  * @module uni-e-fi/view/UD_0201_001
  */
 define(function () {
@@ -15,15 +15,7 @@ define(function () {
             createStatement: function () {
                 $efi.createStatement.validateCreateStatement();
                 var params = $efi.createStatement.getCreateStatementCommonParams();
-                if($u.util.contains($u.page.getPROGRAM_ID(),['UD_0201_001_JHK','UD_0201_001_JHK2'])){
-                    var is_data = params['paramMap'];
-                    var it_data = params['gridData'];
-                    $nst.is_data_it_data_returnMessage('YJHK_001',is_data, it_data, function(message) {
-                        unidocuAlert(message);
-                    });
-                }else{
-                    $efi.createStatement.callCreateStatementFn(params);
-                }
+                $efi.createStatement.callCreateStatementFn(params);
             }
         });
 

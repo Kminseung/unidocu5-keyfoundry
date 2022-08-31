@@ -120,6 +120,14 @@ define([
             if (!requester['NODE_KEY_TXT']) requester['NODE_KEY_TXT'] = requester['DEPT_TXT'];
         }
 
+        function getDisplayTextList(list) {
+            var displayTextList = [];
+            $.each(list, function (index, item) {
+                displayTextList.push($u.util.formatString(' {NODE_KEY_TXT} {JOB_KEY_TXT} {WF_ID_TXT}', item));
+            });
+            return displayTextList;
+        }
+
         function handleDisplayText(item) {
             item['WF_LINE_LEV'] = Number(item['WF_LINE_LEV']);
             if (item['WF_ID'] === '') {
@@ -171,14 +179,6 @@ define([
         });
 
         if (header.WF_SECUR === 'X') header.WF_SECUR_TXT = $mls.getByCode('M_emergencyRequestApproval');
-
-        function getDisplayTextList(list) {
-            var displayTextList = [];
-            $.each(list, function (index, item) {
-                displayTextList.push($u.util.formatString(' {NODE_KEY_TXT} {JOB_KEY_TXT} {WF_ID_TXT}', item));
-            });
-            return displayTextList;
-        }
 
         var $approvalLineTable = $($ewf.mustache.approvalLineTemplate({
             header: header,
@@ -458,6 +458,11 @@ define([
 
     $ewf.statementElFnMap = {
         "10": $ewf.getStatementElZUNIEFI_4207,
+        "20": $ewf.getStatementElZUNIEFI_4207,
+        "30": $ewf.getStatementElZUNIEFI_4207,
+        "40": $ewf.getStatementElZUNIEFI_4207,
+        "50": $ewf.getStatementElZUNIEFI_4207,
+        "60": $ewf.getStatementElZUNIEFI_4207,
         "65": $ewf.generateZUNIEFI_4208StatementFn('UD_0220_101', true),
         // "70": $ewf.generateZUNIEFI_4208StatementFn('UD_0220_102', false),
         // "75": $ewf.generateZUNIEFI_4208StatementFn('UD_0220_111', true),

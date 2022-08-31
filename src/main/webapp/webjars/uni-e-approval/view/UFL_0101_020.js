@@ -9,13 +9,13 @@ define(function () {
             defaultValue: 'ZUNIEWF_0023',
             description: 'ot_dataForGridObj1의 FuncName #20465'
         });
-        $u.programSetting.appendTemplate('ot_dataForGridObj3FuncName',{
-            defaultValue: 'ZUNIEWF_0083',
-            description: 'ot_dataForGridObj3의 FuncName #20465'
-        });
         $u.programSetting.appendTemplate('ot_dataForGridObj2FuncName',{
             defaultValue: 'ZUNIEWF_0043',
             description: 'ot_dataForGridObj2의 FuncName #20465'
+        });
+        $u.programSetting.appendTemplate('ot_dataForGridObj3FuncName',{
+            defaultValue: 'ZUNIEWF_0083',
+            description: 'ot_dataForGridObj3의 FuncName #20465'
         });
         $u.programSetting.appendTemplate('it_dataGridObj1SelectedRowsFuncName',{
             defaultValue: 'ZUNIEWF_0041',
@@ -25,7 +25,6 @@ define(function () {
             defaultValue: 'ZUNIEWF_0024',
             description: 'it_dataGridObj1SelectedRows2의 FuncName #20465'
         });
-
         $u.programSetting.appendTemplate('it_dataGridObj2SelectedRowsFuncName',{
             defaultValue: 'ZUNIEWF_0021',
             description: 'it_dataGridObj2SelectedRows의 FuncName #20465'
@@ -128,6 +127,23 @@ define(function () {
                 $nst.is_data_it_data_nsReturn($u.buttons.getButtonFUNCNAME('saveGridObj3Form'), {}, [params], function () {
                     $u.buttons.runHandler('ot_dataForGridObj3');
                 });
+            },
+            "cancelSaving": function () {
+                $u.buttons.runCustomHandler('cancelSaving', 'cancelSaving');
+            }
+        });
+
+        $u.buttons.addCustomHandler({
+            cancelSaving: function () {
+                gridObj.asserts.selectedExactOneRow();
+                hideAllWrapper();
+                if (!hasSelectedERDAT()) return;
+                $nst.is_data_ot_data($u.programSetting.getValue('ot_dataForGridObj3FuncName'), gridObj.getSELECTEDJSONData()[0], function (ot_data) {
+                    $grid3Wrapper.show();
+                    gridObj3.fitToWindowSize();
+                    gridObj3.setJSONData(ot_data);
+                    $('#deleteGridObj3').show();
+                });
             }
         });
 
@@ -190,10 +206,9 @@ define(function () {
             if (os_data['WF_LINE4_FLAG'] !== 'X') $('#WF_LIN4').parent().parent().hide();
             var assignApprovalLineText = $mls.getByCode('M_assignApprovalLine');
 
-            $('#unidocu-td-WF_LIN1').after($('<button class="unidocu-button" style="margin-left: 10px;" data-wf-item-gb="1"></button>').click(wf_lin_Click).text(assignApprovalLineText));
-            $('#unidocu-td-WF_LIN2').after($('<button class="unidocu-button" style="margin-left: 10px;" data-wf-item-gb="2"></button>').click(wf_lin_Click).text(assignApprovalLineText));
-            $('#unidocu-td-WF_LIN3').after($('<button class="unidocu-button" style="margin-left: 10px;" data-wf-item-gb="3"></button>').click(wf_lin_Click).text(assignApprovalLineText));
-            $('#unidocu-td-WF_LIN4').after($('<button class="unidocu-button" style="margin-left: 10px;" data-wf-item-gb="4"></button>').click(wf_lin_Click).text(assignApprovalLineText));
+            $u.get('WF_LIN1_CHG').$el.before($('<button class="unidocu-button" style="margin-left: 0" data-wf-item-gb="1"></button>').click(wf_lin_Click).text(assignApprovalLineText));
+            $u.get('WF_LIN2_CHG').$el.before($('<button class="unidocu-button" style="margin-left: 0" data-wf-item-gb="2"></button>').click(wf_lin_Click).text(assignApprovalLineText));
+            $u.get('WF_LIN3_CHG').$el.before($('<button class="unidocu-button" style="margin-left: 0" data-wf-item-gb="3"></button>').click(wf_lin_Click).text(assignApprovalLineText));
         }
     }
 });

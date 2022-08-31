@@ -120,6 +120,7 @@ define([
     };
 
     $efi.UD_0302_000EventHandler = {};
+
     $efi.UD_0302_000EventHandler.editStatement = function () {
         var gridObj = $u.gridWrapper.getGrid();
         gridObj.asserts.selectedExactOneRow();
@@ -129,6 +130,7 @@ define([
             $u.navigateByProgramId('UD_0302_011', gridObj.getSELECTEDJSONData()[0]);
         });
     };
+
     $efi.UD_0302_000EventHandler.cancelGroup = function () {
         var gridObj = $u.gridWrapper.getGrid();
         gridObj.asserts.rowSelected();
@@ -144,6 +146,7 @@ define([
             });
         });
     };
+
     $efi.UD_0302_000EventHandler.regularStatementPosting = function () {
         var gridObj = $u.gridWrapper.getGrid();
         gridObj.asserts.rowSelected();
@@ -155,10 +158,13 @@ define([
             });
         });
     };
+
     $efi.UD_0302_000EventHandler.gridCellClick = function (columnKey, rowIndex) {
         var gridObj = $u.gridWrapper.getGrid();
         var gridJSONDataByRowIndex = gridObj.getJSONDataByRowIndex(rowIndex);
+
         if (columnKey === 'BELNR') $efi.popup.openStatementViewWithParamMap(gridJSONDataByRowIndex);
+
         if (columnKey === 'GRONO') {
             if (gridObj.$V(columnKey, rowIndex) === '') return;
             gridObj.$V('SELECTED', rowIndex, 1);
@@ -167,7 +173,9 @@ define([
                 $efi.UD_0302_000EventHandler.openApprovalPopup(nsReturn.getStringReturn("O_URL"));
             });
         }
+
         if (columnKey === 'EVIKB_@') $efi.evikbClickHandler(gridJSONDataByRowIndex);
+
         if (columnKey === 'EVIKB_ADD') {
             if (gridObj._rg.getValue(rowIndex, 'EVIKB_ADD__IMAGE') !== '0') {
                 var $dialog = $u.dialog.fineUploaderDialog.open(gridJSONDataByRowIndex['EVI_SEQ'], false, function () {
@@ -191,7 +199,8 @@ define([
     };
     $efi.UD_0302_000EventHandler.openApprovalPopup = function (o_url) {
         try {
-            var popup = $ewf.popup.openApprovalDetail(o_url);
+            var url = $keyfoundry.encodingUTF8(o_url);
+            var popup = $ewf.popup.openApprovalDetail(url);
             $efi.UD_0302_000EventHandler.handleApprovalPopupClose(popup);
         } catch (e) {
             if (/액세스가 거부되었습니다/.test(e.message)) throw $mls.getByCode('M_UD_0302_000_approvalPopupAccessError');
@@ -335,7 +344,8 @@ define([
     $efi.UD_0201ButtonHandler.create3GetProgramId = function () {
         var basePrg = $u.page.getBASE_PRG();
         var programId = '';
-        if (basePrg === 'uni-e-fi/view/UniDocu001/UD_0201_000') programId = 'UD_0201_002';
+        if (basePrg === 'uni-e-fi/view/UniDocu001/UD_0201_000') programId = 'UD_0201_001B';
+        // if (basePrg === 'uni-e-fi/view/UniDocu001/UD_0201_000') programId = 'UD_0201_002';
         if (basePrg === 'uni-e-fi/view/UniDocu001/UD_0201_010') programId = 'UD_0201_011B';
         return programId;
     };
@@ -366,7 +376,7 @@ define([
         return $u.popup.openPopup('/biz/popup/StatementPreview/view.do?' + $.param(paramMap), 'statementAfterView', 1200, 400);
     };
     $efi.popup.openUD_0398_000 = function (jsonData) {
-        return $u.popup.openByProgramId('UD_0398_000', 1200, 700, jsonData);
+        return $u.popup.openByProgramId('UD_0398_000', 1000, 400, jsonData);
     };
     $efi.popup.openUD_0201_052 = function (data) {
         return $u.popup.openByProgramId('UD_0201_052', 900, 400, data);
@@ -567,9 +577,10 @@ define([
         $nst.is_data_nsReturn(namedServiceId, selectedData, function (nsReturn) {
             var ot_data = nsReturn.getTableReturn('OT_DATA');
             if (ot_data.length === 0) throw $u.util.formatString('vendor info does not exists. [{0}]', [namedServiceId]);
+            if(ot_data[0]['BUPLA'] === '') ot_data[0]['BUPLA'] = selectedData['BUPLA'];
             if (ot_data.length === 1) return callback($.extend({}, selectedData, ot_data[0]));
 
-            var popupKey = 'LIFNR';
+            var popupKey = 'LIFNRM';
             var detailSearchKey = 'STCD2';
             var detailSearchValue = selectedData['SU_ID'];
 

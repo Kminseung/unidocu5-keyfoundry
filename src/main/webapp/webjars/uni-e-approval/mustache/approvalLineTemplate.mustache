@@ -12,10 +12,23 @@
     .approval-line-template td pre {text-align: left;}
     .approval-line-template th {background-color: #f4f4f4;}
     .approval-line-template td {background-color: #fff;}
-    .approval-line-template td.td-type-2 { padding: 10px 0; font-size: 18px; }
+    .approval-line-template td.td-type-2 { font-size: 11px; height: 15px; }
     .approval-line-template .date-time { height: 32px; }
     .approval-line-template pre {margin: 0;}
 </style>
+
+<script>
+    var approverListTableLength = $('#approverListTable tr').length-1;
+    for(var i=0; i<approverListTableLength; i++) {
+        $('#approverListTable tr:eq(' + (i+1) + ') td:eq(' + 0 + ')').html(approverListTableLength-i);
+    }
+
+    var assentientListTableLength = $('#assentientListTable tr').length-1;
+    for(var j=0; j<assentientListTableLength; j++) {
+        $('#assentientListTable tr:eq(' + (j+1) + ') td:eq(' + 0 + ')').html(assentientListTableLength-j);
+    }
+</script>
+
 <div class="approval-line-template">
     <div class="approval-line-template-left">
         <table>
@@ -23,29 +36,56 @@
             <tr> <th class="ellipsis"><span class="NGB">{{{기안부서}}}</span></th> <td data-field-description="NODE_KEY_TXT" class="ellipsis"><span>{{requester.NODE_KEY_TXT}}</span></td> </tr>
             <tr> <th class="ellipsis"><span class="NGB">{{{상신 일시}}}</span></th> <td data-field-description="WF_DATE WF_TIME" class="ellipsis"><span>{{header.WF_DATE}} {{header.WF_TIME}}</span></td> </tr>
         </table>
-        <!--        <table style="margin-top:10px">-->
-        <!--            <tr> <th class="ellipsis"><span class="NGB">{{{문서 구분}}}</span></th> <td data-field-description="WF_GB_TXT" class="ellipsis"><span>{{header.WF_GB_TXT}}</span></td> </tr>-->
-        <!--            <tr> <th class="ellipsis"><span class="NGB">{{{문서 번호}}}</span></th> <td data-field-description="WF_KEY_TEXT" class="ellipsis"><span>{{header.WF_KEY_TEXT}}</span></td> </tr>-->
-        <!--            <tr> <th class="ellipsis"><span class="NGB">{{{결재 요청}}}</span></th> <td data-field-description="WF_SECUR_TXT" style="color: red;" class="ellipsis"><span>{{header.WF_SECUR_TXT}}</span></td> </tr>-->
-        <!--        </table>-->
+        <table style="margin-top:10px">
+            <tr> <th class="ellipsis"><span class="NGB">{{{문서 구분}}}</span></th> <td data-field-description="WF_GB_TXT" class="ellipsis"><span>{{header.WF_GB_TXT}}</span></td> </tr>
+            <tr> <th class="ellipsis"><span class="NGB">{{{문서 번호}}}</span></th> <td data-field-description="WF_KEY_TEXT" class="ellipsis"><span>{{header.WF_KEY_TEXT}}</span></td> </tr>
+            <tr> <th class="ellipsis"><span class="NGB">{{{결재 요청}}}</span></th> <td data-field-description="WF_SECUR_TXT" style="color: red;" class="ellipsis"><span>{{header.WF_SECUR_TXT}}</span></td> </tr>
+        </table>
     </div>
 
-    <div class="approval-line-template-right">
-        <table>
+    <div class="approval-line-template-right" style="min-height: 225px">
+        <span class="NGB" style="margin-right: 95%" id="approverListSpan" data-num="1">-결재</span>
+        <table style="text-align: center; margin-bottom: 1%;" id="approverListTable">
             <tr>
-                <th  class="NGB" rowspan="4" style="min-width: 60px;max-width: 60px;">{{{결재}}}</th>
-                {{#approverList}} <th  class="NGB" style="width:18%" data-field-description="JOB_KEY_TXT">{{JOB_KEY_TXT}}</th> {{/approverList}}
+                <th style="width: 5%">{{{순서}}}</th>
+                <th style="width: 15%">{{{직책}}}</th>
+                <th style="width: 25%">{{{성명}}}</th>
+                <th style="width: 20%">{{{부서}}}</th>
+                <th style="width: 15%">{{{상태}}}</th>
+                <th style="width: 20%">{{{결재시간}}}</th>
             </tr>
-            <tr> {{#approverList}} <td class="td-type-2 NGB" data-field-description="WF_ID_TXT">{{WF_LINE_LEV}} {{WF_ID_TXT}}</td> {{/approverList}} </tr>
-            <tr> {{#approverList}} <th  class="NGB" data-field-description="APPR_STAT_TXT">{{APPR_STAT_TXT}}</th> {{/approverList}} </tr>
-            <tr> {{#approverList}} <td class="date-time" data-field-description="APPR_DATE APPR_TIME">{{APPR_DATE}}<br/>{{APPR_TIME}}</td> {{/approverList}} </tr>
-            <tr class="tr-assentient">
-                <th  class="NGB" rowspan="4">{{{회계}}}</th>
-                {{#assentientList}} <th class="NGB" data-field-description="JOB_KEY_TXT">{{JOB_KEY_TXT}}</th> {{/assentientList}}
+            {{#approverList}}
+                <tr>
+                    <td class="td-type-2 NGB"></td>
+                    <td class="td-type-2 NGB" data-field-description="JOB_KEY_TXT">{{JOB_KEY_TXT}}</td>
+                    <td class="td-type-2 NGB" data-field-description="WF_ID_TXT">{{WF_ID_TXT}}</td>
+                    <td class="td-type-2 NGB" data-field-description="NODE_KEY_TXT">{{NODE_KEY_TXT}}</td>
+                    <td class="td-type-2 NGB" data-field-description="APPR_STAT_TXT">{{APPR_STAT_TXT}}</td>
+                    <td class="td-type-2 NGB" data-field-description="APPR_DATE">{{APPR_DATE}}</td>
+                </tr>
+            {{/approverList}}
+        </table>
+
+        <span class="NGB" style="margin-right: 95%" id="assentientListSpan" data-num="1">-회계</span>
+        <table style="text-align: center;" id="assentientListTable">
+            <tr>
+                <th style="width: 5%">{{{순서}}}</th>
+                <th style="width: 15%">{{{직책}}}</th>
+                <th style="width: 25%">{{{성명}}}</th>
+                <th style="width: 20%">{{{부서}}}</th>
+                <th style="width: 15%">{{{상태}}}</th>
+                <th style="width: 20%">{{{결재시간}}}</th>
             </tr>
-            <tr class="tr-assentient"> {{#assentientList}} <td class="td-type-2 NGB" data-field-description="WF_ID_TXT">{{WF_LINE_LEV}} {{WF_ID_TXT}}</td> {{/assentientList}} </tr>
-            <tr class="tr-assentient"> {{#assentientList}} <th class="NGB" data-field-description="APPR_STAT_TXT">{{APPR_STAT_TXT}}</th> {{/assentientList}} </tr>
-            <tr class="tr-assentient"> {{#assentientList}} <td class="date-time" data-field-description="APPR_DATE APPR_TIME">{{APPR_DATE}}<br/>{{APPR_TIME}}</td> {{/assentientList}} </tr>
+            {{#assentientList}}
+                <tr class="tr-assentient">
+                    <td class="td-type-2 NGB"></td>
+                    <td class="td-type-2 NGB" data-field-description="JOB_KEY_TXT">{{JOB_KEY_TXT}}</td>
+                    <td class="td-type-2 NGB" data-field-description="WF_ID_TXT">{{WF_ID_TXT}}</td>
+                    <td class="td-type-2 NGB" data-field-description="NODE_KEY_TXT">{{NODE_KEY_TXT}}</td>
+                    <td class="td-type-2 NGB" data-field-description="APPR_STAT_TXT">{{APPR_STAT_TXT}}</td>
+                    <td class="td-type-2 NGB date-time" data-field-description="APPR_DATE">{{APPR_DATE}}</td>
+                </tr>
+            {{/assentientList}}
         </table>
     </div>
 

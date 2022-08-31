@@ -1,12 +1,24 @@
-@import "../theme/sk-demo/sk-demo.css"; /* delete when customizing */
-@import "../theme/unidocu-demo/unidocu-new.css";
-/* for vendor customize */
+@charset "UTF-8";
+@import "../theme/keyfoundry/keyfoundry.css";
 
+/*
+* 키파운드리 색상 통일 - #219DCB (0, 175, 201)
+*/
 #top-area #top-logo {
     cursor: pointer;
     float: left;
-    margin-left: 20px;
-    width: 133px;
-    height: 44px;
-    background: url(magnachip/images/main_logo.jpg) no-repeat ;
+    margin-left: 10px;
+    width: 216px;
+    height: 50px;
+    background: url(keyfoundry/images/main_logo.png) no-repeat;
 }
+
+#theme_user_info { display: inline-block; float: left; margin-left: 27px; }
+
+#wrap #sub_content #unidocu-main-menu .main-menu-anchor .leaf-menu-dropdown-list:first-child {
+    border-top: 1px solid #219DCB;
+    border-left: 1px solid transparent;
+}
+
+#formLogin .login-title h2 { font-weight: bold; font-size: 35px; color: #219DCB; text-align: center; }
+#formLogin .login-title p { font-weight: bold; font-size: 20px; text-align: center; }

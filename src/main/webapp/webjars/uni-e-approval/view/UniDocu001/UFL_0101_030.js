@@ -17,6 +17,10 @@ define(function () {
             defaultValue: 'ZUNIEWF_0034',
             description: 'it_dataGridObj1SelectedRows2의 FuncName #20465'
         });
+        $u.programSetting.appendTemplate('hide_search-condition', {
+            defaultValue: 'true',
+            description: 'false : search-condition 템플릿 숨김처리'
+        });
         var gridObj = $u.gridWrapper.getGrid();
         $u.buttons.addHandler({
             ot_dataForGridObj1: function () {
@@ -48,6 +52,7 @@ define(function () {
 
         return function () {
             $u.buttons.runHandler('ot_dataForGridObj1');
+            if ($u.programSetting.getValue('hide_search-condition') === 'true') $('#search-condition').hide();
         }
     }
 });

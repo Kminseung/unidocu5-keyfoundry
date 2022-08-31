@@ -30,7 +30,8 @@ define(function () {
             "reject": function(){$u.buttons.runCustomHandler('approvalStepHandler', 'D')},
             "withdraw": function(){$u.buttons.runCustomHandler('approvalStepHandler', 'E')},
             "closed": function(){$u.buttons.runCustomHandler('approvalStepHandler', 'G')},
-            "comments": function(){$u.buttons.runCustomHandler('approvalStepHandler', 'F')}
+            "comments": function(){$u.buttons.runCustomHandler('approvalStepHandler', 'F')},
+            "list": function(){$u.buttons.runCustomHandler('list', 'H')}
         });
 
         $u.buttons.addCustomHandler({
@@ -73,8 +74,8 @@ define(function () {
                     comments: comments
                 }, {targetNamedServiceId: namedServiceIdMap[appr_stat]});
 
-                $nst.is_data_stringReturns('ApprovalStep', importParam, function(stringReturns){
-                    unidocuAlert(stringReturns['message'], function () {
+                $nst.is_data_stringReturns('ApprovalStep', importParam, function(){
+                    unidocuAlert(function () {
                         if ($u.isPopupView()) {
                             try {opener.$u.buttons.triggerFormTableButtonClick();} // 타 사이트에서 호출 되는 경우 DOMException: Blocked a frame with origin
                             catch (e) {getLogger().log(e);}
@@ -82,6 +83,19 @@ define(function () {
                             location.href = $u.getUrlFromRoot('/unidocu/view.do?programId=UFL_0401_010');
                         } else history.back();
                     });
+                });
+            },
+            list: function () {
+                unidocuConfirm($mls.getByCode('M_DRAFT_0011_MoveToApprovalWaitingBox'), function () {
+                    if ($u.isPopupView()) {
+                        try {
+                            opener.$u.buttons.triggerFormTableButtonClick();
+                        } catch (e) {
+                            getLogger().log(e);
+                        }
+                        window.close();
+                        window.open($u.getUrlFromRoot('/unidocu/view.do?programId=UFL_0401_010'));
+                    }
                 });
             }
         });
@@ -122,9 +136,10 @@ define(function () {
 
                 $ewf.renderEmbedStatementArea(os_header['WF_GB'], os_header['GRONO']);
 
-                if($u.isPopupView()) $u.util.resizeWindowBy$el($('#searchForm'), 40);
+                //if($u.isPopupView()) $u.util.resizeWindowBy$el($('#searchForm'), 40);
+                if($u.isPopupView()) $keyfoundry.resizeToDRAFT_0011($('#searchForm'), 40);
 
-                $magnachip.statementPop();
+                $keyfoundry.statementPop();
             });
         }
     };

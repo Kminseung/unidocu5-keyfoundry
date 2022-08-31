@@ -7,6 +7,11 @@
       <option name="url" value="http://unidocu.unipost.co.kr/nexus/content/groups/public" />
     </remote-repository>
     <remote-repository>
+      <option name="id" value="unipost-web-public-repository" />
+      <option name="name" value="UniPost Web Public Repository" />
+      <option name="url" value="http://unidocu.unipost.co.kr/nexus/content/groups/public" />
+    </remote-repository>
+    <remote-repository>
       <option name="id" value="central" />
       <option name="name" value="Central Repository" />
       <option name="url" value="http://unidocu.unipost.co.kr/nexus/content/groups/public" />

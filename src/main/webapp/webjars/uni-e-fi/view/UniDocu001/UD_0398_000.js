@@ -12,11 +12,11 @@ define(function () {
 
         return function () {
             $(window).focus().resize();
+            $('.page_title').css({"margin-top": 0});
             $('body').addClass('show-as-popup');
             $nst.is_data_ot_data('ZUNIECM_5013', $u.page.getPageParams(), function (ot_data) {
                 gridObj.setJSONData(ot_data);
             });
-
         }
     }
 });

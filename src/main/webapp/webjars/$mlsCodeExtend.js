@@ -5,8 +5,8 @@ define(function () {
     return function () {
         $.extend($mlsCode, {
             "M_addReceiver": "수신자를 추가해주세요",
-            "M_alreadAddedUser": "이미 목록에 있는 사용자 입니다 [$ID$]",
-            "M_alredyAdded": "이미 추가 되었습니다",
+            "M_alreadyAddedUser": "이미 목록에 있는 사용자 입니다 [$ID$]",
+            "M_alreadyAdded": "이미 추가 되었습니다",
             "M_assignApprovalLine": "결재선지정",
             "M_canNotAddMoreThanTenUser": "결재선 설정은 최대 10명까지 가능 합니다",
             "M_cannotPartRejectBySingleStatement": "전표건이 하나인 경우 부분 반려 불가 합니다",
@@ -137,6 +137,9 @@ define(function () {
             "M_addDataManage_addRowGrid2_validate1": "추가데이터 그룹 선택 후 행 추가하세요.",
             "M_addDataManage_addRowGrid2_validate2": "추가데이터 그룹 입력 후 행 추가하세요.",
             "M_addDataManage_saveGrid1_validate": "web data 저장 후 진행하세요.",
+            "M_DRAFT_0011_MoveToApprovalWaitingBox": "결재대기함으로 이동하시겠습니까?",
+            "M_No_Additional_Data_Exists": "추가 데이터가 존재하지 않습니다.",
+            "M_PreCondition_To_Password": "비밀번호는 9자 이상,\n영문과 숫자, 특수문자가 각각 1개 이상 포함되어야 합니다.",
 
             // DLT: Dialog Title
             "DLT_afterCreateStatementDialog": "전표생성",

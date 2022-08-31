@@ -48,7 +48,7 @@ define([
             if ($efi.addDataHandler.hasDataAll()) {
                 unidocuConfirm("추가데이터 없이 계속 진행하시겠습니까?", function () {
                     callFunction();
-                })
+                });
             } else {
                 callFunction();
             }
@@ -254,7 +254,8 @@ define([
             }
             if (columnKey === 'HKONT') {
                 $efi.addDataHandler.handleADD_DATAKeyChange(rowIndex);
-                if (/UD_0201_001|UD_0201_011/.test($u.page.getPROGRAM_ID())) $efi.setMWSKZ_By_HKONT_F4(columnKey, rowIndex, jsonObj);
+                // #31515
+                // if (/UD_0201_001|UD_0201_011/.test($u.page.getPROGRAM_ID())) $efi.setMWSKZ_By_HKONT_F4(columnKey, rowIndex, jsonObj);
             }
 
             $efi.createStatement.setGridBudget(columnKey, rowIndex);

@@ -63,7 +63,6 @@ define(function () {
 
     var state;
 
-
     return function () {
         $u.unidocuUI();
         var orgTree = new $efi.OrgTree($('#org-tree'), {
@@ -121,6 +120,13 @@ define(function () {
             },
         });
         return function () {
+            $u.programSetting.appendTemplate('hide_uni-buttons-user',{
+                defaultValue: 'true',
+                description: 'Hiding template of uni_buttons_user'
+            });
+
+            if ($u.programSetting.getValue('hide_uni-buttons-user') === 'true') $('#uni-buttons-user').hide();
+
             formHandler.initialize();
             orgTree.initOrgData();
         }

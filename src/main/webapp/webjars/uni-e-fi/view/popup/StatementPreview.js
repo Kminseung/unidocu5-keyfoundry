@@ -6,13 +6,10 @@ define(function () {
         function setFormattedData(obj, fieldName){
             var value = obj[fieldName];
             if (value === '0000-00-00') return;
-            if(value) obj['FORMATTED_' + fieldName] = $u.util.date.getDateAsUserDateFormat(value.replace(/-/g, ''))
+            if(value) obj['FORMATTED_' + fieldName] = $u.util.date.getDateAsUserDateFormat(value.replace(/-/g, ''));
         }
 
         return function(){
-            // 전표 미리보기 추가데이터 UD_0201_001 추가건만 보이도록 설정 되어 있었음.
-            // 제거. 필요시 범용으로 추가
-
             $nst.is_data_nsReturn('ZUNIEFI_4110', $u.page.getPageParams(), function (nsReturn) {
                 var os_key = nsReturn.getExportMap('OS_KEY');
                 var ot_data1 = nsReturn.getTableReturn('OT_DATA1');
@@ -75,10 +72,36 @@ define(function () {
                     S_WRBTR_TXT_SUM: S_WRBTR_TXT_SUM,
                     H_WRBTR_TXT_SUM: H_WRBTR_TXT_SUM
                 }));
+
+                var addData;
+                var programID;
+                var hkont = $('.HKONT');
+                for(var i=0; i<ot_data2.length; i++) {
+                    if(ot_data2[i].ADD_DATA !== '') {
+                        addData = ot_data2[i].ADD_DATA;
+                        programID = ot_data2[i].PROGRAM_ID;
+                        hkont[i].style.color = 'red';
+                        $keyfoundry.addDataDialog(addData, programID);
+                    }
+                }
+
+                hkont.click(function() {
+                    var index = hkont.index(this);
+                    var addData = ot_data2[index].ADD_DATA;
+                    var programID = ot_data2[index].PROGRAM_ID;
+
+                    if(addData !== '') {
+                        $keyfoundry.addDataDialog(addData, programID);
+                    }
+                });
+
                 var belnrData = $.extend(true, {}, first_ot_data1);
                 belnrData['DOKNR'] = belnrData['BELNR'];
+
                 var $evidenceLink = $('#evidence-wrapper').find('img');
                 if(!evikey) $evidenceLink.hide();
+
+                $efi.evikbClickHandler(belnrData);
                 $evidenceLink.click(function(){
                     $efi.evikbClickHandler(belnrData);
                 });

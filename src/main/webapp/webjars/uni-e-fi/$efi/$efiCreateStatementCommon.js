@@ -166,6 +166,7 @@ define(function () {
                     description: '[Form] 세금금액 - 증빙금액(세액) 사용 (redmine refs #18602)'
                 });
             }
+            $kms_temp_function.hideOneClickTemplate();
 
             var gridObj = $u.gridWrapper.getGrid();
             if (gridObj) gridObj.setSortEnable(false);

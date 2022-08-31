@@ -501,6 +501,14 @@ define(function () {
                     if (columnKey === 'ISSUE_ID') return $efi.popup.openTaxInvoice(gridObj.$V('INV_SEQ', rowIndex));
                     if (columnKey === 'EVI_SEQ') return $efi.popup.showEvidence(gridObj.$V('EVI_SEQ', rowIndex));
                 });
+
+                // 세금계산서 팝업 권한별 처리담당자 제어
+                if($u.page.getPROGRAM_ID() === 'UD_0204_100') {
+                    if(staticProperties.user['ROLE'].indexOf('FI_2120') === -1 && $u.get('FLAG__DIALOG')) {
+                        $('#unidocu-td-FLAG__DIALOG label:nth-child(2)').hide();
+                    }
+                }
+
                 $u.util.tryCatchCall(function(){
                     $u.buttons.triggerFormTableButtonClick(formId);
                 });

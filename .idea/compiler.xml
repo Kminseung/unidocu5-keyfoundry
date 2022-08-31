@@ -6,8 +6,14 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="unidocu5-magnachip" />
+        <module name="unidocu5-keyfoundry" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="unidocu5-clientcore" target="1.8" />
+      <module name="unidocu5-core-keyfoundry" target="1.8" />
+      <module name="unidocu5-servercore" target="1.8" />
+      <module name="unidocu5-webjars" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>
