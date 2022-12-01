@@ -20,6 +20,8 @@ define([
             paramMap['INV_SEQ'] = $u.page.getPageParams()['INV_SEQ'];
             paramMap['CRD_SEQ'] = $u.page.getPageParams()['CRD_SEQ'];
 
+            if($u.page.getPROGRAM_ID() === 'UD_0201_011' && !$u.get('ZTERM')) paramMap['ZTERM'] = '';
+
             return {
                 paramMap: paramMap,
                 gridData: gridData

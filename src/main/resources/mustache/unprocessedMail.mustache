@@ -1,0 +1,30 @@
+<table style="text-align: left; border-collapse: collapse; font-size: small; width: 1000px;" border="1">
+    <thead>
+    <tr style="background-color: #ddd; font-weight: normal; text-align: center;">
+        <th style="padding: 10px;">작성일자</th>
+        <th style="padding: 10px;">승인번호</th>
+        <th style="padding: 10px;">공급자 사업자번호</th>
+        <th style="padding: 10px;">공급자 상호</th>
+        <th style="padding: 10px;">합계금액</th>
+        <th style="padding: 10px;">공급가액</th>
+        <th style="padding: 10px;">세액</th>
+        <th style="padding: 10px;">비고</th>
+    </tr>
+    </thead>
+    <tbody id="tbody">
+    {{#unprocessedList}}
+        <tr>
+            <td style="padding: 5px;">{{ISSUE_DATE}}</td>
+            <td style="padding: 5px;">{{ISSUE_ID}}</td>
+            <td style="padding: 5px;">{{SU_ID}}</td>
+            <td style="padding: 5px;">{{SU_NAME}}</td>
+            <td style="padding: 5px; text-align: right;">{{GRANDTOTAL}}</td>
+            <td style="padding: 5px; text-align: right;">{{CHARGETOTAL}}</td>
+            <td style="padding: 5px; text-align: right;">{{TAXTOTAL}}</td>
+            <td style="padding: 5px;">{{DESC_TEXT1}}</td>
+        </tr>
+    {{/unprocessedList}}
+    </tbody>
+</table>
+
+<a style="margin-top: 10px;" href={{redirectURL}} target="_blank">세금계산서 내역 조회</a>

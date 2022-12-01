@@ -309,34 +309,6 @@ define([
         return {os_head: os_head, ot_data1: ot_data1};
     };
 
-    $ewf.generateZUNIEWF_6732StatementFn = function(doc_kinds) {
-        return function(grono) {
-            var zuniefi_6732_nsReturn = $nst.is_data_nsReturn('ZUNIEWF_6732', {GRONO: grono, DOC_KINDS: doc_kinds});
-            var os_data = zuniefi_6732_nsReturn.getExportMap('OS_DATA');
-            var ot_data = zuniefi_6732_nsReturn.getTableReturn('OT_DATA');
-            var ot_head = zuniefi_6732_nsReturn.getTableReturn('OT_HEAD');
-            var template;
-            if(doc_kinds === 'A' || doc_kinds === 'C') template = $ewf.mustache.embedStatementZUNIEFI_6732_apply_Template;
-            else if(doc_kinds === 'B') template = $ewf.mustache.embedStatementZUNIEFI_6732_calculate_Template;
-            else if(doc_kinds === 'D') template = $ewf.mustache.embedStatementZUNIEFI_6732_domesticTemplate;
-            else if(doc_kinds === 'E') template = $ewf.mustache.embedStatementZUNIEFI_6732_apply_overseasTemplate;
-            else if(doc_kinds === 'F') template = $ewf.mustache.embedStatementZUNIEFI_6732_calculate_overseasTemplate;
-            var $el = $(template({
-                os_data : os_data,
-                ot_head : ot_head,
-                ot_data : ot_data
-            }));
-            $el.appendTo('body');
-            $el.on('click','.statement-evidence-link',function () {
-                var data = $(this).data();
-                $.each(data, function(key, value){
-                    data[key.toUpperCase()] = value;
-                });
-                $efi.evikbClickHandler(data);
-            });
-        }
-    }
-
     $ewf.generateZUNIEFI_4208StatementFn = function(programID, isRequest) {
         return function(grono) {
             var zuniefi_4208_nsReturn = $nst.is_data_nsReturn('ZUNIEFI_4208', {GRONO: grono});
@@ -377,85 +349,6 @@ define([
 
     }
 
-    $ewf.getStatementElZUNIEFI_3707 = function (grono) {
-        var zuniefi_3707_nsReturn = $nst.is_data_nsReturn('ZUNIEFI_3707', {GRONO: grono});
-        var ot_data = zuniefi_3707_nsReturn.getTableReturn('OT_DATA');
-
-        var $el = $('<div><div id="clear-draft-grid" class="unidocu-grid" data-sub-id="GRIDHEADER" style="height: 300px;margin-top:10px;"></div></div>');
-        $u.renderUIComponents($el, 'clear-draft-grid');
-        var gridObj = $u.gridWrapper.getGrid('clear-draft-grid');
-        var precisionMap = {};
-        $.each($u.f4Data.getCodeMapWithParams('WAERS', 'CURRDEC'), function(waers, currdec){
-            precisionMap[waers] = Number(currdec);
-        });
-        gridObj.setNumberFormatByCurrencyColumn({"WAERS":"WRBTR"}, precisionMap);
-        gridObj.setJSONData(ot_data);
-        gridObj.setSortEnable(false);
-        gridObj._rg.gridView.setRowGroup({expandedAdornments: 'none'});
-        gridObj.setGroupMerge('BUKRS,BELNR,GJAHR,BLART,BUDAT,BANKN,BANKS,BANKL,WRBTR,WAERS,ID,PERNR');
-        gridObj.fitToWindowSize();
-        return $el;
-    };
-
-    $ewf.getStatementElZUNIEFI_3607 = function (grono) {
-        var nsReturn = $nst.is_data_nsReturn('ZUNIEFI_3607', {GRONO: grono});
-
-        var $el = $('<div>' +
-            '<div id="form1" class="unidocu-form-table-wrapper" style="margin-top:10px;"></div>' +
-            '<div id="form2" class="unidocu-form-table-wrapper"  style="margin-top:10px;"></div>' +
-            '<div id="unidocu-grid-FI_0001" class="unidocu-grid" data-sub-id="GRIDHEADER" style="margin-top: 10px; height: 185px;"></div>' +
-            '<div id="unidocu-grid2-FI_0001" class="unidocu-grid" data-sub-id="GRIDHEADER2" style="margin-top: 10px; height: 275px;"></div>' +
-            '</div>');
-
-        $u.renderUIComponents($el, 'FI_0001');
-
-        var os_data_ZUNIEFI_3607 = nsReturn.getExportMap('OS_DATA');
-        $u.setValues('form1', os_data_ZUNIEFI_3607);
-        $u.setValues('form2', os_data_ZUNIEFI_3607);
-        var gridObj = $u.gridWrapper.getGrid('unidocu-grid-FI_0001');
-        var gridObj2 = $u.gridWrapper.getGrid('unidocu-grid2-FI_0001');
-        gridObj.setJSONData(nsReturn.getTableReturn('OT_GL'));
-        gridObj2.setJSONData(nsReturn.getTableReturn('OT_ITEM'));
-        if($u.page.getPROGRAM_ID('DRAFT_0010') ) $u.fileUI.load(os_data_ZUNIEFI_3607['EVI_SEQ']);
-
-        $u.makeReadOnlyForm('form1');
-        $u.makeReadOnlyForm('form2');
-        gridObj.makeReadOnlyGrid();
-        gridObj2.makeReadOnlyGrid();
-        return $el;
-    };
-
-    $ewf.getStatementElZUNIEFI_6500 = function (grono) {
-        var gridObj = $(opener.document).find('#unidocu-grid')[0];
-        var seletedGridData = gridObj.getSELECTEDJSONData()[0];
-
-        var params = {
-            GRONO: grono,
-            MODE: 'S',
-            CAR_NUM:seletedGridData['CAR_NUM'],
-            REQNO:seletedGridData['REQNO']
-        };
-
-        var zuniefi_6500_nsReturn = $nst.is_data_nsReturn('ZUNIEFI_6500', params);
-        var ot_data = zuniefi_6500_nsReturn.getTableReturn('OT_DATA');
-
-        $.each(ot_data, function(index, item){
-            item['BF_KM'] = Number(item['BF_KM']);
-            item['AF_KM'] = Number(item['AF_KM']);
-            item['MILEAGE'] = item['AF_KM'] - item['BF_KM'];
-            item['USEKM1'] = Number(item['USEKM1']);
-            item['USEKM2'] = Number(item['USEKM2']);
-            item['USEKM3'] = Number(item['USEKM3']);
-
-            if(item['WONOFF'] === 'A') item['WONOFF_TXT'] = '출/퇴근';
-            if(item['WONOFF'] === 'B') item['WONOFF_TXT'] = '출근';
-            if(item['WONOFF'] === 'C') item['WONOFF_TXT'] = '퇴근';
-            if(item['WONOFF'] === 'D') item['WONOFF_TXT'] = '무';
-        });
-
-        return $($ewf.mustache.embedStatementZUNIEFI_6500Template({OT_DATA: ot_data}));
-    };
-
     $ewf.statementElFnMap = {
         "10": $ewf.getStatementElZUNIEFI_4207,
         "20": $ewf.getStatementElZUNIEFI_4207,
@@ -464,20 +357,9 @@ define([
         "50": $ewf.getStatementElZUNIEFI_4207,
         "60": $ewf.getStatementElZUNIEFI_4207,
         "65": $ewf.generateZUNIEFI_4208StatementFn('UD_0220_101', true),
-        // "70": $ewf.generateZUNIEFI_4208StatementFn('UD_0220_102', false),
-        // "75": $ewf.generateZUNIEFI_4208StatementFn('UD_0220_111', true),
         "80": $ewf.generateZUNIEFI_4208StatementFn('UD_0220_112', false),
         "85": $ewf.generateZUNIEFI_4208StatementFn('UD_0220_001', true),
         "90": $ewf.generateZUNIEFI_4208StatementFn('UD_0220_002', false),
-        "95": $ewf.getStatementElZUNIEFI_3707,
-        "94": $ewf.getStatementElZUNIEFI_3607,
-        "CR": $ewf.getStatementElZUNIEFI_6500,
-        "70": $ewf.generateZUNIEWF_6732StatementFn('A'), // 출장비 신청
-        "71": $ewf.generateZUNIEWF_6732StatementFn('B'), // 출장비 정산
-        "72": $ewf.generateZUNIEWF_6732StatementFn('C'), // 국내출장비 신청
-        "73": $ewf.generateZUNIEWF_6732StatementFn('D'), // 국내출장비 정산
-        "74": $ewf.generateZUNIEWF_6732StatementFn('E'), // 해외출장비 신청
-        "75": $ewf.generateZUNIEWF_6732StatementFn('F') // 해와출장비 정산
     };
 
     $ewf.renderEmbedStatementArea = function (wf_gb, grono) {

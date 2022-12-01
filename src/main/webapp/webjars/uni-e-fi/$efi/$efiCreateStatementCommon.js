@@ -166,7 +166,13 @@ define(function () {
                     description: '[Form] 세금금액 - 증빙금액(세액) 사용 (redmine refs #18602)'
                 });
             }
-            $kms_temp_function.hideOneClickTemplate();
+            if ($u.util.contains($u.page.getPROGRAM_ID(), ['UD_0201_001', 'UD_0201_000C', 'UD_0201_011', 'UD_0202_001', 'UD_0202_021'])) {
+                $u.programSetting.appendTemplate('원클릭 전표 항목', {
+                    defaultValue: 'true',
+                    description: 'false : 원클릭 전표 항목 템플릿 숨김처리'
+                });
+                if ($u.programSetting.getValue('원클릭 전표 항목') === 'false') $('#autoInput-select-condition').hide();
+            }
 
             var gridObj = $u.gridWrapper.getGrid();
             if (gridObj) gridObj.setSortEnable(false);

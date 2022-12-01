@@ -52,7 +52,7 @@
                 <th style="width: 25%">{{{성명}}}</th>
                 <th style="width: 20%">{{{부서}}}</th>
                 <th style="width: 15%">{{{상태}}}</th>
-                <th style="width: 20%">{{{결재시간}}}</th>
+                <th style="width: 20%">{{{결재시각}}}</th>
             </tr>
             {{#approverList}}
                 <tr>
@@ -61,7 +61,7 @@
                     <td class="td-type-2 NGB" data-field-description="WF_ID_TXT">{{WF_ID_TXT}}</td>
                     <td class="td-type-2 NGB" data-field-description="NODE_KEY_TXT">{{NODE_KEY_TXT}}</td>
                     <td class="td-type-2 NGB" data-field-description="APPR_STAT_TXT">{{APPR_STAT_TXT}}</td>
-                    <td class="td-type-2 NGB" data-field-description="APPR_DATE">{{APPR_DATE}}</td>
+                    <td class="td-type-2 NGB" data-field-description="APPR_DATE">{{APPR_DATE}} {{APPR_TIME}}</td>
                 </tr>
             {{/approverList}}
         </table>
@@ -74,7 +74,7 @@
                 <th style="width: 25%">{{{성명}}}</th>
                 <th style="width: 20%">{{{부서}}}</th>
                 <th style="width: 15%">{{{상태}}}</th>
-                <th style="width: 20%">{{{결재시간}}}</th>
+                <th style="width: 20%">{{{결재시각}}}</th>
             </tr>
             {{#assentientList}}
                 <tr class="tr-assentient">
@@ -83,7 +83,7 @@
                     <td class="td-type-2 NGB" data-field-description="WF_ID_TXT">{{WF_ID_TXT}}</td>
                     <td class="td-type-2 NGB" data-field-description="NODE_KEY_TXT">{{NODE_KEY_TXT}}</td>
                     <td class="td-type-2 NGB" data-field-description="APPR_STAT_TXT">{{APPR_STAT_TXT}}</td>
-                    <td class="td-type-2 NGB date-time" data-field-description="APPR_DATE">{{APPR_DATE}}</td>
+                    <td class="td-type-2 NGB date-time" data-field-description="APPR_DATE">{{APPR_DATE}} {{APPR_TIME}}</td>
                 </tr>
             {{/assentientList}}
         </table>

@@ -199,8 +199,7 @@ define([
     };
     $efi.UD_0302_000EventHandler.openApprovalPopup = function (o_url) {
         try {
-            var url = $keyfoundry.encodingUTF8(o_url);
-            var popup = $ewf.popup.openApprovalDetail(url);
+            var popup = $ewf.popup.openApprovalDetail(o_url);
             $efi.UD_0302_000EventHandler.handleApprovalPopupClose(popup);
         } catch (e) {
             if (/액세스가 거부되었습니다/.test(e.message)) throw $mls.getByCode('M_UD_0302_000_approvalPopupAccessError');

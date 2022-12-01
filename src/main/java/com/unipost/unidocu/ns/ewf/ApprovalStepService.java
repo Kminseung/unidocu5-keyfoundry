@@ -42,8 +42,10 @@ public class ApprovalStepService extends AbstractJAVAService {
             String bukrs = importParam.get("BUKRS");
             String wf_key = ot_datum.get("WF_KEY");
             String redirectUrl = String.format("/unidocu/view.do?programId=DRAFT_0011&ID=%s&PERNR=%s&BUKRS=%s&WF_KEY=%s&showAsPopup=true", id, pernr, bukrs, wf_key);
+            String redirectUrlM = String.format("/unidocu/mview.do?programId=DRAFT_0011M&ID=%s&PERNR=%s&BUKRS=%s&WF_KEY=%s&showAsPopup=true", id, pernr, bukrs, wf_key);
 
             ot_datum.put("redirectUrl", redirectUrl);
+            ot_datum.put("redirectUrlM", redirectUrlM);
             ot_datum.put("comments", comments);
         }
 

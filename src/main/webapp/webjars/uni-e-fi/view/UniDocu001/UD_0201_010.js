@@ -173,7 +173,7 @@ define(function () {
             $('#uni-buttons').prepend($pickFiles);
             if (staticProperties.zuniecm_0000['AP_XML'] === 'X' && !$u.isPopupView()) $pickFiles.show();
 
-            var $deferredArray = [];
+            var $deferred;
 
             $u.util.singleFileUploader({
                 url: $u.getUrlFromRoot('/SingleFileUpload/asString.do'),
@@ -182,14 +182,13 @@ define(function () {
                 FileUploaded: function (up, file, info) {
                     var response = JSON.parse(info['response']);
                     var importParam = {XML: response['contents'], BUKRS: staticProperties.user['BUKRS']};
-                    var $deferred = $.Deferred();
-                    $deferredArray.push($deferred);
+                    $deferred = $.Deferred();
                     $nst.is_data_nsReturn('ZDTV3INF_AP_XML_UPLOAD', importParam,$deferred.resolve);
                 },
                 UploadComplete: function () {
-                    $.when.apply($, $deferredArray).done(function (nsReturn) {
+                    $deferred.done(function (nsReturn) {
                         var os_msgv1 = nsReturn.getExportMap('OS_RETURN')['MSGV1'];
-                        $u.get('FLAG').setValue('S');
+                        staticProperties.user['ROLE'].indexOf('FI_2120') === -1 ? $u.get('FLAG').setValue('P') : $u.get('FLAG').setValue('S');
                         $u.get('ISSUE_ID').setValue(os_msgv1);
                         $u.buttons.triggerFormTableButtonClick();
                     });
@@ -218,6 +217,10 @@ define(function () {
                     if ($u_R001.getValue() === 'A') { // 상태: 정상 A, 삭제 B
                         $deleteHistoryRecoveryGroup.hide();
                         $createStatementGroup.show();
+                        if (staticProperties.user['ROLE'].indexOf('FI_2120') === -1) {
+                            $('#unidocu-td-FLAG label:nth-child(2)').hide();
+                            $('#deleteStatementMulti').hide();
+                        }
                         if (staticProperties.zuniecm_0000['AP_XML'] === 'X' && !$u.isPopupView()) $pickFiles.show();
                     }
                     if ($u_R001.getValue() === 'B') {

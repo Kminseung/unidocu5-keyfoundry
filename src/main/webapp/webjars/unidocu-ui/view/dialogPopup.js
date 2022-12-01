@@ -44,7 +44,8 @@ define(function () {
                                     })
                                 ],
                                 ignoreGrid: true,
-                                dialogWidth: 600
+                                dialogWidth: 600,
+                                closeCallback: window.close
                             });
 
                             var remaining = nsReturn.getStringReturn('remaining');
@@ -75,8 +76,11 @@ define(function () {
                 }
             },
             chanePasswordValidation: function(pw, checkPW){
+                var passReg = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[`~!@#$%^&*()\-_=+\[\]{}\\|;:'",.<>\/?]).{9,}$/;
+
                 if(!pw || !checkPW) throw $mls.getByCode('M_enterPassword');
                 if(pw !== checkPW) throw($mls.getByCode('M_incorrectPassword'));
+                if(!passReg.test(pw) && !passReg.test(checkPW)) throw($mls.getByCode('M_PreCondition_To_Password'));
             }
         });
 
